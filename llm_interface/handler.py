@@ -1,5 +1,5 @@
 import logging
-from ollama import chat  # Ensure you have installed ollama via pip
+from llm_interface import chat
 
 logger = logging.getLogger(__name__)
 
