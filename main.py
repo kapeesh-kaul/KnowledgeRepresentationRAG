@@ -55,6 +55,15 @@ def main():
                     continue
                 neo4j_conn.create_article_node(linked_page.title, linked_url)
                 neo4j_conn.create_relationship(page.title, linked_page.title, "SEE_ALSO")
+
+        def test_llm():
+            from llm_interface import LLMHandler
+            from llm_interface.prompts import Prompts
+            handler = LLMHandler()
+            response = handler.process_inputs(Prompts.summarize_article(), neo4j_conn.list_nodes())
+            logger.info("LLM response: %s", response)
+        test_llm()
+
     except Exception as e:
         logger.exception("An error occurred: %s", e)
     finally:
