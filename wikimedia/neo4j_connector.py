@@ -24,7 +24,7 @@ class Neo4jConnector:
             url (str): The article URL.
         """
         with self.driver.session() as session:
-            session.write_transaction(self._create_article_node_tx, title, url)
+            session.execute_write(self._create_article_node_tx, title, url)
             logger.info("Created/updated node for article: '%s'", title)
     
     @staticmethod
@@ -46,7 +46,7 @@ class Neo4jConnector:
             rel_type (str): The relationship type (default: 'SEE_ALSO').
         """
         with self.driver.session() as session:
-            session.write_transaction(self._create_relationship_tx, from_title, to_title, rel_type)
+            session.execute_write(self._create_relationship_tx, from_title, to_title, rel_type)
             logger.info("Created relationship '%s' from '%s' to '%s'.", rel_type, from_title, to_title)
     
     @staticmethod
@@ -58,3 +58,51 @@ class Neo4jConnector:
             "RETURN r"
         )
         tx.run(query, from_title=from_title, to_title=to_title)
+    
+    def list_nodes(self, label: str = None, limit: int = 10):
+        """
+        List nodes in the
+        graph with an optional label and limit.
+        Args:
+            label (str): The label of the nodes to list (default: None).
+            limit (int): The maximum number of nodes to return (default: 10).
+        Returns:
+            list: A list of nodes with their properties.
+        """
+        with self.driver.session() as session:
+            nodes = session.execute_read(self._list_nodes_tx, label, limit)
+            logger.info("Listed %d nodes.", len(nodes))
+            return nodes
+    @staticmethod
+    def _list_nodes_tx(tx, label: str, limit: int):
+        if label:
+            query = f"MATCH (n:{label}) RETURN id(n) AS node_id, n LIMIT $limit"
+        else:
+            query = "MATCH (n) RETURN id(n) AS node_id, n LIMIT $limit"
+        result = tx.run(query, limit=limit)
+        return [{"id": record["node_id"], "properties": dict(record["n"])} for record in result]
+    def list_relationships(self, limit: int = 10):
+        """
+        List relationships in the graph with an optional limit.
+        Args:
+            limit (int): The maximum number of relationships to return (default: 10).   
+        Returns:   
+            list: A list of relationships with their properties.
+        """
+        with self.driver.session() as session:
+            rels = session.execute_read(self._list_relationships_tx, limit)
+            logger.info("Listed %d relationships.", len(rels))
+            return rels
+    @staticmethod
+    def _list_relationships_tx(tx, limit: int):
+        query = "MATCH ()-[r]->() RETURN id(r) AS rel_id, r LIMIT $limit"
+        result = tx.run(query, limit=limit)
+        rels = []
+        for record in result:
+            r = record["r"]
+            rels.append({
+                "id": record["rel_id"],
+                "type": r.type,  # Relationship type
+                "properties": dict(r)
+            })
+        return rels
