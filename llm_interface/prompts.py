@@ -5,15 +5,15 @@ class Prompts:
     Methods
     -------
     summarize_article():
-        Returns a prompt template for summarizing an article and providing a structured JSON output.
+        Returns a prompt template for summarizing an article and providing a plain text output.
     """
     @staticmethod
     def summarize_article():
         """
-        Returns a prompt template for summarizing an article and providing a structured JSON output.
+        Returns a prompt template for summarizing an article and providing a plain text output.
         """
         return '''
             Given the article content, 
             summarize the main ideas and provide a 
-            structured JSON output summarizing the main ideas.
+            plain text output summarizing the main ideas.
         '''
