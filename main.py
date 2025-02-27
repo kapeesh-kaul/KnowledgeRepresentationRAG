@@ -60,7 +60,10 @@ def main():
             from llm_interface import LLMHandler
             from llm_interface.prompts import Prompts
             handler = LLMHandler()
-            response = handler.process_inputs(Prompts.summarize_article(), neo4j_conn.list_nodes())
+            response = handler.process_inputs(
+                Prompts.summarize_article(), 
+                neo4j_conn.list_nodes()
+            )
             logger.info("LLM response: %s", response)
         test_llm()
 
