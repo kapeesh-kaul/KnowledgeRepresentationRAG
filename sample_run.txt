@@ -1,0 +1,169 @@
+(kg-rag) kapeeshkaul → KnowledgeRepresentationRAG $ sudo neo4j start
+[sudo] password for kapeeshkaul: 
+Directories in use:
+home:         /var/lib/neo4j
+config:       /etc/neo4j
+logs:         /var/log/neo4j
+plugins:      /var/lib/neo4j/plugins
+import:       /var/lib/neo4j/import
+data:         /var/lib/neo4j/data
+certificates: /var/lib/neo4j/certificates
+licenses:     /var/lib/neo4j/licenses
+run:          /var/lib/neo4j/run
+Starting Neo4j.
+Started neo4j (pid:2775). It is available at http://localhost:7474
+There may be a short delay until the server is ready.
+(kg-rag) kapeeshkaul → KnowledgeRepresentationRAG $ python query.py clean
+WARNING: This will delete ALL nodes and relationships. Type 'yes' to confirm: yes
+Database cleaned.
+(kg-rag) kapeeshkaul → KnowledgeRepresentationRAG $ python main.py
+Enter a search term for Wikipedia: Tiger
+INFO:wikimedia.neo4j_connector:Connected to Neo4j at bolt://localhost:7687
+INFO:wikimedia.search:Found 10 pages for query 'Tiger'.
+INFO:wikimedia.scraper:Fetched page for 'Tiger'.
+INFO:wikimedia.neo4j_connector:Created/updated node for article: 'Tiger'
+INFO:wikimedia.scraper:Extracted 3 'See also' links from 'Tiger'.
+INFO:wikimedia.scraper:Fetched page for 'List of largest cats'.
+INFO:wikimedia.neo4j_connector:Created/updated node for article: 'List of largest cats'
+INFO:wikimedia.neo4j_connector:Created relationship 'SEE_ALSO' from 'Tiger' to 'List of largest cats'.
+INFO:wikimedia.scraper:Fetched page for 'International Tiger Day'.
+INFO:wikimedia.neo4j_connector:Created/updated node for article: 'International Tiger Day'
+INFO:wikimedia.neo4j_connector:Created relationship 'SEE_ALSO' from 'Tiger' to 'International Tiger Day'.
+INFO:wikimedia.scraper:Fetched page for 'Tiger Temple'.
+INFO:wikimedia.neo4j_connector:Created/updated node for article: 'Tiger Temple'
+INFO:wikimedia.neo4j_connector:Created relationship 'SEE_ALSO' from 'Tiger' to 'Tiger Temple'.
+INFO:wikimedia.scraper:Fetched page for 'Topologically Integrated Geographic Encoding and Referencing'.
+INFO:wikimedia.neo4j_connector:Created/updated node for article: 'Topologically Integrated Geographic Encoding and Referencing'
+INFO:wikimedia.scraper:No 'See also' section found for 'Topologically Integrated Geographic Encoding and Referencing'.
+INFO:wikimedia.scraper:Fetched page for 'Siberian tiger'.
+INFO:wikimedia.neo4j_connector:Created/updated node for article: 'Siberian tiger'
+INFO:wikimedia.scraper:Extracted 3 'See also' links from 'Siberian tiger'.
+INFO:wikimedia.scraper:Fetched page for 'Amur leopard'.
+INFO:wikimedia.neo4j_connector:Created/updated node for article: 'Amur leopard'
+INFO:wikimedia.neo4j_connector:Created relationship 'SEE_ALSO' from 'Siberian tiger' to 'Amur leopard'.
+INFO:wikimedia.scraper:Fetched page for 'Bergmann's rule'.
+INFO:wikimedia.neo4j_connector:Created/updated node for article: 'Bergmann's rule'
+INFO:wikimedia.neo4j_connector:Created relationship 'SEE_ALSO' from 'Siberian tiger' to 'Bergmann's rule'.
+INFO:wikimedia.scraper:Fetched page for 'Holocene extinction'.
+INFO:wikimedia.neo4j_connector:Created/updated node for article: 'Holocene extinction'
+INFO:wikimedia.neo4j_connector:Created relationship 'SEE_ALSO' from 'Siberian tiger' to 'Holocene extinction'.
+INFO:wikimedia.scraper:Fetched page for 'Tiger Tiger'.
+INFO:wikimedia.neo4j_connector:Created/updated node for article: 'Project Tiger'
+INFO:wikimedia.scraper:Extracted 9 'See also' links from 'Project Tiger'.
+INFO:wikimedia.scraper:Fetched page for 'List of Indian states by tiger population'.
+INFO:wikimedia.neo4j_connector:Created/updated node for article: 'List of Indian states by wildlife population'
+INFO:wikimedia.neo4j_connector:Created relationship 'SEE_ALSO' from 'Project Tiger' to 'List of Indian states by wildlife population'.
+INFO:wikimedia.scraper:Fetched page for 'Tiger reserves of India'.
+INFO:wikimedia.neo4j_connector:Created/updated node for article: 'Tiger reserves of India'
+INFO:wikimedia.neo4j_connector:Created relationship 'SEE_ALSO' from 'Project Tiger' to 'Tiger reserves of India'.
+INFO:wikimedia.scraper:Fetched page for 'Tiger poaching in India'.
+INFO:wikimedia.neo4j_connector:Created/updated node for article: 'Tiger poaching in India'
+INFO:wikimedia.neo4j_connector:Created relationship 'SEE_ALSO' from 'Project Tiger' to 'Tiger poaching in India'.
+INFO:wikimedia.scraper:Fetched page for 'Indian Council of Forestry Research and Education'.
+INFO:wikimedia.neo4j_connector:Created/updated node for article: 'Indian Council of Forestry Research and Education'
+INFO:wikimedia.neo4j_connector:Created relationship 'SEE_ALSO' from 'Project Tiger' to 'Indian Council of Forestry Research and Education'.
+INFO:wikimedia.scraper:Fetched page for 'Save China's Tigers'.
+INFO:wikimedia.neo4j_connector:Created/updated node for article: 'Save China's Tigers'
+INFO:wikimedia.neo4j_connector:Created relationship 'SEE_ALSO' from 'Project Tiger' to 'Save China's Tigers'.
+INFO:wikimedia.scraper:Fetched page for 'Project Elephant'.
+INFO:wikimedia.neo4j_connector:Created/updated node for article: 'Project Elephant'
+INFO:wikimedia.neo4j_connector:Created relationship 'SEE_ALSO' from 'Project Tiger' to 'Project Elephant'.
+INFO:wikimedia.scraper:Fetched page for 'Project Dolphin'.
+INFO:wikimedia.neo4j_connector:Created/updated node for article: 'GameCube'
+INFO:wikimedia.neo4j_connector:Created relationship 'SEE_ALSO' from 'Project Tiger' to 'GameCube'.
+INFO:wikimedia.scraper:Fetched page for 'Project Cheetah'.
+INFO:wikimedia.neo4j_connector:Created/updated node for article: 'African cheetah translocation to India'
+INFO:wikimedia.neo4j_connector:Created relationship 'SEE_ALSO' from 'Project Tiger' to 'African cheetah translocation to India'.
+INFO:wikimedia.scraper:Fetched page for 'International Big Cat Alliance'.
+INFO:wikimedia.neo4j_connector:Created/updated node for article: 'International Big Cat Alliance'
+INFO:wikimedia.neo4j_connector:Created relationship 'SEE_ALSO' from 'Project Tiger' to 'International Big Cat Alliance'.
+INFO:wikimedia.scraper:Fetched page for 'White tiger'.
+INFO:wikimedia.neo4j_connector:Created/updated node for article: 'White tie'
+INFO:wikimedia.scraper:No 'See also' section found for 'White tie'.
+INFO:wikimedia.scraper:Fetched page for 'Tiger Woods'.
+INFO:wikimedia.neo4j_connector:Created/updated node for article: 'Tiger Woods'
+INFO:wikimedia.scraper:Extracted 8 'See also' links from 'Tiger Woods'.
+INFO:wikimedia.scraper:Fetched page for 'Career Grand Slam Champions'.
+INFO:wikimedia.neo4j_connector:Created/updated node for article: 'List of Grand Slam men's singles champions'
+INFO:wikimedia.neo4j_connector:Created relationship 'SEE_ALSO' from 'Tiger Woods' to 'List of Grand Slam men's singles champions'.
+INFO:wikimedia.scraper:Fetched page for 'List of golfers with most European Tour wins'.
+INFO:wikimedia.neo4j_connector:Created/updated node for article: 'List of golfers with most European Tour wins'
+INFO:wikimedia.neo4j_connector:Created relationship 'SEE_ALSO' from 'Tiger Woods' to 'List of golfers with most European Tour wins'.
+INFO:wikimedia.scraper:Fetched page for 'List of golfers with most PGA Tour wins'.
+INFO:wikimedia.neo4j_connector:Created/updated node for article: 'List of golfers with most PGA Tour wins'
+INFO:wikimedia.neo4j_connector:Created relationship 'SEE_ALSO' from 'Tiger Woods' to 'List of golfers with most PGA Tour wins'.
+INFO:wikimedia.scraper:Fetched page for 'List of golfers with most wins in one PGA Tour event'.
+INFO:wikimedia.neo4j_connector:Created/updated node for article: 'List of golfers with most PGA Tour wins'
+INFO:wikimedia.neo4j_connector:Created relationship 'SEE_ALSO' from 'Tiger Woods' to 'List of golfers with most PGA Tour wins'.
+INFO:wikimedia.scraper:Fetched page for 'List of longest PGA Tour win streaks'.
+INFO:wikimedia.neo4j_connector:Created/updated node for article: 'List of longest PGA Tour win streaks'
+INFO:wikimedia.neo4j_connector:Created relationship 'SEE_ALSO' from 'Tiger Woods' to 'List of longest PGA Tour win streaks'.
+INFO:wikimedia.scraper:Fetched page for 'List of men's major championships winning golfers'.
+INFO:wikimedia.neo4j_connector:Created/updated node for article: 'List of men's major championships winning golfers'
+INFO:wikimedia.neo4j_connector:Created relationship 'SEE_ALSO' from 'Tiger Woods' to 'List of men's major championships winning golfers'.
+INFO:wikimedia.scraper:Fetched page for 'List of world number one male golfers'.
+INFO:wikimedia.neo4j_connector:Created/updated node for article: 'List of world number one male golfers'
+INFO:wikimedia.neo4j_connector:Created relationship 'SEE_ALSO' from 'Tiger Woods' to 'List of world number one male golfers'.
+INFO:wikimedia.scraper:Fetched page for 'Most PGA Tour wins in a year'.
+INFO:wikimedia.neo4j_connector:Created/updated node for article: 'Most PGA Tour wins in a year'
+INFO:wikimedia.neo4j_connector:Created relationship 'SEE_ALSO' from 'Tiger Woods' to 'Most PGA Tour wins in a year'.
+/home/kapeeshkaul/miniconda3/envs/kg-rag/lib/python3.13/site-packages/wikipedia/wikipedia.py:389: GuessedAtParserWarning: No parser was explicitly specified, so I'm using the best available HTML parser for this system ("html.parser"). This usually isn't a problem, but if you run this code on another system, or in a different virtual environment, it may use a different parser and behave differently.
+
+The code that caused this warning is on line 389 of the file /home/kapeeshkaul/miniconda3/envs/kg-rag/lib/python3.13/site-packages/wikipedia/wikipedia.py. To get rid of this warning, pass the additional argument 'features="html.parser"' to the BeautifulSoup constructor.
+
+  lis = BeautifulSoup(html).find_all('li')
+ERROR:wikimedia.scraper:Error fetching page for 'Tiger 3': "tiger 1" may refer to: 
+Tiger I
+Ek Tha Tiger
+Tiger 2 (disambiguation)
+ERROR:__main__:Skipping page 'Tiger 3' due to error: "tiger 1" may refer to: 
+Tiger I
+Ek Tha Tiger
+Tiger 2 (disambiguation)
+INFO:wikimedia.scraper:Fetched page for 'Tiger (zodiac)'.
+INFO:wikimedia.neo4j_connector:Created/updated node for article: 'Tiger (zodiac)'
+INFO:wikimedia.scraper:Extracted 2 'See also' links from 'Tiger (zodiac)'.
+INFO:wikimedia.scraper:Fetched page for 'Tiger'.
+INFO:wikimedia.neo4j_connector:Created/updated node for article: 'Tiger'
+INFO:wikimedia.neo4j_connector:Created relationship 'SEE_ALSO' from 'Tiger (zodiac)' to 'Tiger'.
+INFO:wikimedia.scraper:Fetched page for 'Burmese zodiac'.
+INFO:wikimedia.neo4j_connector:Created/updated node for article: 'Burmese zodiac'
+INFO:wikimedia.neo4j_connector:Created relationship 'SEE_ALSO' from 'Tiger (zodiac)' to 'Burmese zodiac'.
+ERROR:wikimedia.scraper:Error fetching page for 'Tiger II': Page id "tiger i" does not match any pages. Try another id!
+ERROR:__main__:Skipping page 'Tiger II' due to error: Page id "tiger i" does not match any pages. Try another id!
+INFO:wikimedia.scraper:Fetched page for 'Tiger I'.
+INFO:wikimedia.neo4j_connector:Created/updated node for article: 'Tiger 3'
+INFO:wikimedia.scraper:No 'See also' section found for 'Tiger 3'.
+INFO:wikimedia.neo4j_connector:Listed 10 nodes.
+INFO:llm_interface.handler:Sending prompt to LLM:
+
+            Given the article content, 
+            summarize the main ideas and provide a 
+            plain text output summarizing the main ideas.
+        
+{'id': 0, 'properties': {'title': 'African cheetah translocation to India', 'url': 'https://en.wikipedia.org/wiki/African_cheetah_translocation_to_India'}}
+{'id': 1, 'properties': {'title': 'International Big Cat Alliance', 'url': 'https://en.wikipedia.org/wiki/International_Big_Cat_Alliance'}}
+{'id': 2, 'properties': {'title': 'White tie', 'url': 'https://en.wikipedia.org/wiki/White_tie'}}
+{'id': 3, 'properties': {'title': 'Tiger Woods', 'url': 'https://en.wikipedia.org/wiki/Tiger_Woods'}}
+{'id': 4, 'properties': {'title': "List of Grand Slam men's singles champions", 'url': 'https://en.wikipedia.org/wiki/List_of_Grand_Slam_men%27s_singles_champions'}}
+{'id': 5, 'properties': {'title': 'List of golfers with most European Tour wins', 'url': 'https://en.wikipedia.org/wiki/List_of_golfers_with_most_European_Tour_wins'}}
+{'id': 6, 'properties': {'title': 'List of golfers with most PGA Tour wins', 'url': 'https://en.wikipedia.org/wiki/List_of_golfers_with_most_PGA_Tour_wins'}}
+{'id': 7, 'properties': {'title': 'List of longest PGA Tour win streaks', 'url': 'https://en.wikipedia.org/wiki/List_of_longest_PGA_Tour_win_streaks'}}
+{'id': 8, 'properties': {'title': "List of men's major championships winning golfers", 'url': 'https://en.wikipedia.org/wiki/List_of_men%27s_major_championships_winning_golfers'}}
+{'id': 9, 'properties': {'title': 'Tiger', 'url': 'https://en.wikipedia.org/wiki/Tiger'}}
+INFO:httpx:HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+INFO:llm_interface.handler:Received LLM response.
+INFO:__main__:LLM response: Here is a plain text summary of the main ideas from the article content:
+
+The content appears to be a list of Wikipedia article titles related to various topics. The topics include:
+
+* Animal translocation (African cheetahs in India)
+* Big cat conservation and advocacy (International Big Cat Alliance)
+* Formal events and etiquette (White tie, Tiger Woods' golf career)
+* Sports history (List of Grand Slam men's singles champions, List of golfers with most European Tour wins, etc.)
+* Golf tournaments and records (Lists of PGA Tour winners, longest win streaks, etc.)
+
+Overall, the content seems to be a collection of Wikipedia article titles related to sports, animals, and formal events.
+INFO:wikimedia.neo4j_connector:Closed Neo4j connection.
+(kg-rag) kapeeshkaul → KnowledgeRepresentationRAG $ sudo neo4j stop
+Stopping Neo4j....... stopped.
