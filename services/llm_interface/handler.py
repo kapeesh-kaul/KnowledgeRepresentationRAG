@@ -25,18 +25,28 @@ class LLMHandler:
         to the LLM.
 
         Args:
-            prompt_input (str): The main prompt text.
+            prompt_input (str): The main prompt text. Can contain {schema} and {prompt} placeholders.
             query_response (dict or list, optional): Structured query response data
                 (for example, from a Neo4j query) to be formatted and included.
         
         Returns:
             str: The generated LLM response.
         """
-        if query_response:
-            formatted_data = self.format_data(query_response)
-            full_prompt = f"{prompt_input}\n{formatted_data}"
+        # Format the prompt template if it contains placeholders
+        if '{schema}' in prompt_input or '{prompt}' in prompt_input:
+            # Extract schema and prompt from query_response if available
+            schema = query_response.get('schema', '') if isinstance(query_response, dict) else ''
+            prompt = query_response.get('prompt', '') if isinstance(query_response, dict) else ''
+            
+            # Format the template
+            full_prompt = prompt_input.format(schema=schema, prompt=prompt)
         else:
-            full_prompt = prompt_input
+            # If no placeholders, just append the query response if available
+            if query_response:
+                formatted_data = self.format_data(query_response)
+                full_prompt = f"{prompt_input}\n{formatted_data}"
+            else:
+                full_prompt = prompt_input
 
         logger.info("Sending prompt to LLM:\n%s", full_prompt)
         try:
