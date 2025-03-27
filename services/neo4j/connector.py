@@ -37,6 +37,29 @@ class Neo4jConnector:
         )
         tx.run(query, title=title, url=url)
     
+    def create_article_relationship(self, from_title: str, to_title: str, rel_type: str = "SEE_ALSO"):
+        """
+        Create a relationship between two article nodes.
+
+        Args:
+            from_title (str): Title of the source article
+            to_title (str): Title of the target article
+            rel_type (str): The relationship type (default: 'SEE_ALSO')
+        """
+        with self.driver.session() as session:
+            session.execute_write(self._create_article_relationship_tx, from_title, to_title, rel_type)
+            logger.info("Created relationship '%s' from '%s' to '%s'", rel_type, from_title, to_title)
+
+    @staticmethod
+    def _create_article_relationship_tx(tx, from_title: str, to_title: str, rel_type: str):
+        query = (
+            "MATCH (a1:Article {title: $from_title}) "
+            "MATCH (a2:Article {title: $to_title}) "
+            f"CREATE (a1)-[r:{rel_type}]->(a2) "
+            "RETURN r"
+        )
+        tx.run(query, from_title=from_title, to_title=to_title)
+    
     def create_relationship(self, from_title: str, to_title: str, rel_type: str = "SEE_ALSO"):
         """
         Create a relationship between two article nodes.
@@ -188,5 +211,136 @@ class Neo4jConnector:
             "version": db_info.get("version", "unknown"),
             "edition": db_info.get("edition", "unknown")
         }
+
+    def create_content_chunk(self, content: str, article_title: str, chunk_type: str = "TEXT", chunk_title: str = None):
+        """
+        Create a content chunk node and link it to its source article.
+
+        Args:
+            content (str): The actual content of the chunk
+            article_title (str): The title of the source article
+            chunk_type (str): The type of chunk (e.g., "TEXT", "LIST", "TABLE")
+            chunk_title (str): The title/heading of the chunk
+
+        Returns:
+            str: The elementId of the created chunk, or None if article doesn't exist
+        """
+        with self.driver.session() as session:
+            # First check if article exists
+            article_exists = session.execute_read(self._check_article_exists_tx, article_title)
+            if not article_exists:
+                logger.error("Cannot create chunk for non-existent article: '%s'", article_title)
+                return None
+                
+            chunk_id = session.execute_write(self._create_content_chunk_tx, content, article_title, chunk_type, chunk_title)
+            logger.info("Created content chunk '%s' for article: '%s'", chunk_title or "untitled", article_title)
+            return chunk_id
+
+    @staticmethod
+    def _check_article_exists_tx(tx, article_title: str) -> bool:
+        query = "MATCH (a:Article {title: $article_title}) RETURN count(a) > 0 as exists"
+        result = tx.run(query, article_title=article_title)
+        return result.single()["exists"]
+
+    @staticmethod
+    def _create_content_chunk_tx(tx, content: str, article_title: str, chunk_type: str, chunk_title: str) -> str:
+        query = (
+            "MATCH (a:Article {title: $article_title}) "
+            "CREATE (c:ContentChunk {content: $content, type: $chunk_type, title: $chunk_title}) "
+            "CREATE (a)-[:HAS_CHUNK]->(c) "
+            "RETURN elementId(c) as chunk_id"
+        )
+        result = tx.run(query, content=content, article_title=article_title, chunk_type=chunk_type, chunk_title=chunk_title)
+        return result.single()["chunk_id"]
+
+    def create_chunk_relationship(self, from_chunk_id: str, to_chunk_id: str, rel_type: str = "RELATED_TO"):
+        """
+        Create a relationship between two content chunks.
+
+        Args:
+            from_chunk_id (str): elementId of the source chunk
+            to_chunk_id (str): elementId of the target chunk
+            rel_type (str): The relationship type (default: 'RELATED_TO')
+        """
+        with self.driver.session() as session:
+            session.execute_write(self._create_chunk_relationship_tx, from_chunk_id, to_chunk_id, rel_type)
+            logger.info("Created relationship '%s' between chunks %s and %s", rel_type, from_chunk_id, to_chunk_id)
+
+    @staticmethod
+    def _create_chunk_relationship_tx(tx, from_chunk_id: str, to_chunk_id: str, rel_type: str):
+        query = (
+            "MATCH (c1:ContentChunk) WHERE elementId(c1) = $from_chunk_id "
+            "MATCH (c2:ContentChunk) WHERE elementId(c2) = $to_chunk_id "
+            f"CREATE (c1)-[r:{rel_type}]->(c2) "
+            "RETURN r"
+        )
+        tx.run(query, from_chunk_id=from_chunk_id, to_chunk_id=to_chunk_id)
+
+    def get_chunk_by_title(self, title: str) -> List[Dict[str, Any]]:
+        """
+        Get content chunks by their title.
+
+        Args:
+            title (str): The title to search for
+
+        Returns:
+            List[Dict[str, Any]]: List of matching chunks with their elementIds
+        """
+        with self.driver.session() as session:
+            chunks = session.execute_read(self._get_chunk_by_title_tx, title)
+            return chunks
+
+    @staticmethod
+    def _get_chunk_by_title_tx(tx, title: str) -> List[Dict[str, Any]]:
+        query = (
+            "MATCH (c:ContentChunk) "
+            "WHERE c.title CONTAINS $title "
+            "RETURN elementId(c) as id, c"
+        )
+        result = tx.run(query, title=title)
+        return [{"id": record["id"], "properties": dict(record["c"])} for record in result]
+
+    def create_chunk_to_article_relationship(self, chunk_id: str, article_title: str, rel_type: str = "LINKED_TO"):
+        """
+        Create a relationship between a content chunk and an article it mentions.
+
+        Args:
+            chunk_id (str): elementId of the source chunk
+            article_title (str): Title of the target article
+            rel_type (str): The relationship type (default: 'LINKED_TO')
+        """
+        with self.driver.session() as session:
+            session.execute_write(self._create_chunk_to_article_relationship_tx, chunk_id, article_title, rel_type)
+            logger.info("Created relationship '%s' from chunk %s to article '%s'", rel_type, chunk_id, article_title)
+
+    @staticmethod
+    def _create_chunk_to_article_relationship_tx(tx, chunk_id: str, article_title: str, rel_type: str):
+        query = (
+            "MATCH (c:ContentChunk) WHERE elementId(c) = $chunk_id "
+            "MATCH (a:Article {title: $article_title}) "
+            f"CREATE (c)-[r:{rel_type}]->(a) "
+            "RETURN r"
+        )
+        tx.run(query, chunk_id=chunk_id, article_title=article_title)
+
+    def cleanup_orphaned_chunks(self):
+        """
+        Remove any content chunks that are not connected to an article.
+        """
+        with self.driver.session() as session:
+            deleted_count = session.execute_write(self._cleanup_orphaned_chunks_tx)
+            logger.info("Cleaned up %d orphaned chunks", deleted_count)
+            return deleted_count
+
+    @staticmethod
+    def _cleanup_orphaned_chunks_tx(tx) -> int:
+        query = (
+            "MATCH (c:ContentChunk) "
+            "WHERE NOT (c)<-[:HAS_CHUNK]-() "
+            "DETACH DELETE c "
+            "RETURN count(c) as deleted_count"
+        )
+        result = tx.run(query)
+        return result.single()["deleted_count"]
 
     

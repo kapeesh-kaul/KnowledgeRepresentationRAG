@@ -1,6 +1,7 @@
 import wikipedia
 import re
 import logging
+from typing import List, Dict, Any
 
 logger = logging.getLogger(__name__)
 
@@ -54,3 +55,82 @@ class WikipediaScraper:
                 links.append(line)
         logger.info("Extracted %d 'See also' links from '%s'.", len(links), page.title)
         return links
+    
+    def extract_content_chunks(self, page) -> List[Dict[str, Any]]:
+        """
+        Extract meaningful content chunks from the page's content.
+
+        Args:
+            page (wikipedia.WikipediaPage): The page object.
+
+        Returns:
+            List[Dict[str, Any]]: A list of content chunks with their types and content.
+        """
+        content = page.content
+        chunks = []
+        
+        # Split content into sections
+        sections = re.split(r'(?m)^==\s*', content)
+        
+        for section in sections:
+            if not section.strip():
+                continue
+                
+            # Extract section title and content
+            title_match = re.match(r'^(.*?)\s*==\n(.*)', section, re.DOTALL)
+            if not title_match:
+                continue
+                
+            section_title = title_match.group(1).strip()
+            section_content = title_match.group(2).strip()
+            
+            # Skip certain sections
+            if section_title.lower() in ['references', 'external links', 'see also', 'notes']:
+                continue
+                
+            # Split section content into paragraphs
+            paragraphs = [p.strip() for p in section_content.split('\n\n') if p.strip()]
+            
+            for paragraph in paragraphs:
+                # Skip empty paragraphs
+                if not paragraph:
+                    continue
+                
+                # Try to extract a title from the paragraph
+                chunk_title = None
+                # Look for a title in the first line if it's short
+                first_line = paragraph.split('\n')[0]
+                if len(first_line) < 100 and not first_line.startswith(('*', '-', '|')):
+                    chunk_title = first_line
+                    paragraph = '\n'.join(paragraph.split('\n')[1:])
+                
+                # Determine chunk type
+                chunk_type = "TEXT"
+                if paragraph.startswith('*') or paragraph.startswith('-'):
+                    chunk_type = "LIST"
+                elif '|' in paragraph:
+                    chunk_type = "TABLE"
+                
+                # If no title was found, use a default based on type and section
+                if not chunk_title:
+                    chunk_title = f"{section_title} - {chunk_type}"
+                
+                chunks.append({
+                    'content': paragraph,
+                    'type': chunk_type,
+                    'section': section_title,
+                    'title': chunk_title
+                })
+        
+        logger.info("Extracted %d content chunks from '%s'", len(chunks), page.title)
+        return chunks
+
+    def extract_linked_pages(self, page) -> list:
+        """
+        Extract all linked pages from the page's content.
+        """
+        content = page.content
+        # Look for all links in the content.
+        links = re.findall(r'\[(.*?)\]', content)
+        return links
+

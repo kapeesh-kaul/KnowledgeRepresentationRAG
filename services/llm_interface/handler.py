@@ -18,68 +18,39 @@ class LLMHandler:
         """
         self.model = model
 
-    def process_inputs(self, prompt_input: str, query_response=None) -> str:
+    def run_prompt(self, prompt: str, **kwargs : dict) -> str:
         """
-        Process two inputs: a required prompt string and an optional query response.
-        The query response is formatted and appended to the prompt before being sent
-        to the LLM.
+        Run a prompt against the LLM.
 
         Args:
-            prompt_input (str): The main prompt text. Can contain {schema} and {prompt} placeholders.
-            query_response (dict or list, optional): Structured query response data
-                (for example, from a Neo4j query) to be formatted and included.
-        
-        Returns:
-            str: The generated LLM response.
-        """
-        # Format the prompt template if it contains placeholders
-        if '{schema}' in prompt_input or '{prompt}' in prompt_input:
-            # Extract schema and prompt from query_response if available
-            schema = query_response.get('schema', '') if isinstance(query_response, dict) else ''
-            prompt = query_response.get('prompt', '') if isinstance(query_response, dict) else ''
-            
-            # Format the template
-            full_prompt = prompt_input.format(schema=schema, prompt=prompt)
-        else:
-            # If no placeholders, just append the query response if available
-            if query_response:
-                formatted_data = self.format_data(query_response)
-                full_prompt = f"{prompt_input}\n{formatted_data}"
-            else:
-                full_prompt = prompt_input
+            prompt (str): The prompt text to send to the LLM
+            **kwargs: Additional keyword arguments to include in the prompt
 
-        logger.info("Sending prompt to LLM:\n%s", full_prompt)
+        Returns:
+            str: The LLM response text, or None if an error occurs
+        """
+        if not prompt:
+            logger.error("Empty prompt provided")
+            return None
+
         try:
+            # Format kwargs into a string if provided
+            kwargs_str = str(kwargs) if kwargs else ""
+
             response = chat(
                 model=self.model,
-                messages=[{
-                    'role': 'user',
-                    'content': full_prompt,
-                }]
+                messages=[
+                    {"role": "user", "content": prompt},
+                    {"role": "user", "content": kwargs_str}
+                ]
             )
-            # Access the generated content from the response.
-            result = response.message.content
-            logger.info("Received LLM response.")
-            return result
-        except Exception as e:
-            logger.error("Error querying LLM: %s", e)
-            raise
 
-    def format_data(self, data) -> str:
-        """
-        Convert structured query data (dict or list) into a formatted string.
-        
-        Args:
-            data (dict or list): The data to format.
-        
-        Returns:
-            str: A formatted string representation of the data.
-        """
-        if isinstance(data, dict):
-            # Format as key: value pairs.
-            return "\n".join([f"{key}: {value}" for key, value in data.items()])
-        elif isinstance(data, list):
-            # Format each element on a new line.
-            return "\n".join(map(str, data))
-        else:
-            return str(data)
+            if not response:
+                logger.warning("Empty response received from LLM")
+                return None
+
+            return response.get("message", {}).get("content")
+
+        except Exception as e:
+            logger.error(f"Error running prompt: {e}")
+            return None

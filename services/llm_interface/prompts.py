@@ -11,6 +11,7 @@ class Prompts:
         """
         Returns a prompt template for summarizing an article and providing a plain text output.
         """
+        
         self.summarize_article = '''
             Given the article content, 
             summarize the main ideas and provide a 
@@ -26,12 +27,7 @@ class Prompts:
             RETURN n.title, n.content
             ```
             
-            Schema:
-            {schema}
-
-            Prompt:
-            {prompt}
-
+            Schema and Prompt:
         '''
     
 prompts = Prompts()
