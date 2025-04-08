@@ -1,5 +1,6 @@
 import logging
 from ollama import chat
+from core.settings import settings
 
 logger = logging.getLogger(__name__)
 
@@ -9,14 +10,14 @@ class LLMHandler:
     The handler accepts a required prompt and an optional query response,
     which is formatted and appended to the prompt.
     """
-    def __init__(self, model: str = "llama3.2:3b-instruct-fp16"):
+    def __init__(self, model: str = None):
         """
         Initialize the handler with the model to use.
         
         Args:
-            model (str): The name or identifier of the LLM model.
+            model (str): The name or identifier of the LLM model. If None, uses the model from settings.
         """
-        self.model = model
+        self.model = model or settings.LLM_MODEL
 
     def run_prompt(self, prompt: str, **kwargs : dict) -> str:
         """

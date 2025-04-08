@@ -1,0 +1,36 @@
+{
+    "categories": [
+        {
+            "name": "gandhi_early_life",
+            "description": "Test cases about Gandhi's early life and education",
+            "test_cases": [
+                {
+                    "prompt": "Where and when was Mahatma Gandhi born, and what was his early education like?",
+                    "expected_answer": "Mahatma Gandhi was born on October 2, 1869, in Porbandar, Gujarat, India. He studied law in London at the Inner Temple and was called to the bar in 1891. His early education in India was at local schools in Porbandar and Rajkot.",
+                    "keywords": ["October 2, 1869", "Porbandar", "Gujarat", "law", "London", "Inner Temple"]
+                },
+                {
+                    "prompt": "What was Gandhi's experience in South Africa and how did it influence him?",
+                    "expected_answer": "Gandhi spent 21 years in South Africa (1893-1914) where he developed his political views and philosophy of nonviolent resistance. He faced racial discrimination which led him to fight for civil rights, developing the concept of Satyagraha (truth-force) and becoming a leader in the Indian community's struggle against injustice.",
+                    "keywords": ["South Africa", "21 years", "nonviolent resistance", "Satyagraha", "civil rights", "racial discrimination"]
+                }
+            ]
+        },
+        {
+            "name": "gandhi_independence_movement",
+            "description": "Test cases about Gandhi's role in India's independence movement",
+            "test_cases": [
+                {
+                    "prompt": "What were some of Gandhi's major campaigns during the Indian independence movement?",
+                    "expected_answer": "Gandhi led several major campaigns including the Non-Cooperation Movement (1920-22), the Salt March (1930), and the Quit India Movement (1942). He advocated for nonviolent civil disobedience, promoted self-reliance through the spinning wheel (charkha), and worked to unite Hindus and Muslims in the independence struggle.",
+                    "keywords": ["Non-Cooperation Movement", "Salt March", "Quit India Movement", "civil disobedience", "charkha", "Hindus and Muslims"]
+                },
+                {
+                    "prompt": "What were Gandhi's key principles and how did he implement them?",
+                    "expected_answer": "Gandhi's key principles included Ahimsa (non-violence), Satyagraha (truth-force), and Swaraj (self-rule). He implemented these through peaceful protests, fasting, and civil disobedience. He promoted simple living, wearing homespun khadi cloth, and advocated for the upliftment of the untouchables (whom he called Harijans).",
+                    "keywords": ["Ahimsa", "Satyagraha", "Swaraj", "non-violence", "khadi", "Harijans", "civil disobedience"]
+                }
+            ]
+        }
+    ]
+} 

@@ -1,0 +1,89 @@
+{
+  "categories": [
+    {
+      "name": "gandhi_early_life",
+      "description": "Test cases about Gandhi's early life and education",
+      "test_cases": [
+        {
+          "prompt": "Where and when was Mahatma Gandhi born, and what was his early education like?",
+          "expected": "Mahatma Gandhi was born on October 2, 1869, in Porbandar, Gujarat, India. He studied law in London at the Inner Temple and was called to the bar in 1891. His early education in India was at local schools in Porbandar and Rajkot.",
+          "actual": "I'm sorry, but I couldn't find any information on the birthplace, date of birth, or early education of Mahatma Gandhi in my database. It's possible that this information is not widely documented or available. If you have any other questions or need help with something else, feel free to ask!",
+          "metrics": {
+            "similarity_score": 0.019230769230769232,
+            "rouge_scores": {
+              "rouge-1": 0.20779220293472772,
+              "rouge-2": 0.044444439483951166,
+              "rouge-l": 0.1818181769607018
+            },
+            "keyword_score": 0.0,
+            "total_score": 0.06223776078051823
+          },
+          "generation_time": 39.310611963272095
+        },
+        {
+          "prompt": "What was Gandhi's experience in South Africa and how did it influence him?",
+          "expected": "Gandhi spent 21 years in South Africa (1893-1914) where he developed his political views and philosophy of nonviolent resistance. He faced racial discrimination which led him to fight for civil rights, developing the concept of Satyagraha (truth-force) and becoming a leader in the Indian community's struggle against injustice.",
+          "actual": "I'm sorry, but I couldn't find any information on Mahatma Gandhi's experience in South Africa. It's possible that the records are incomplete or not available in our database. If you're looking for more information on Gandhi's life and legacy, I'd be happy to provide some general insights or direct you to resources that may have more details on his experiences in South Africa.\n\nWould you like me to tell you about Gandhi's early years in South Africa, where he spent 21 years working as a lawyer and becoming involved in the Indian rights movement?",
+          "metrics": {
+            "similarity_score": 0.07517084282460136,
+            "rouge_scores": {
+              "rouge-1": 0.2758620642568371,
+              "rouge-2": 0.13235293665333062,
+              "rouge-l": 0.2068965470154579
+            },
+            "keyword_score": 0.3333333333333333,
+            "total_score": 0.19213730123447792
+          },
+          "generation_time": 13.403130054473877
+        }
+      ]
+    },
+    {
+      "name": "gandhi_independence_movement",
+      "description": "Test cases about Gandhi's role in India's independence movement",
+      "test_cases": [
+        {
+          "prompt": "What were some of Gandhi's major campaigns during the Indian independence movement?",
+          "expected": "Gandhi led several major campaigns including the Non-Cooperation Movement (1920-22), the Salt March (1930), and the Quit India Movement (1942). He advocated for nonviolent civil disobedience, promoted self-reliance through the spinning wheel (charkha), and worked to unite Hindus and Muslims in the independence struggle.",
+          "actual": "I'd be happy to help you with that question.\n\nIt appears that the results I have don't provide a comprehensive list of Gandhi's major campaigns during the Indian independence movement. However, based on my knowledge, some notable campaigns associated with Mahatma Gandhi include:\n\n- The Non-Cooperation Movement (1920-1922): This campaign aimed to challenge British rule by encouraging Indians not to cooperate with the colonial government in various ways, such as paying taxes, serving on juries, and buying products from Britain.\n- The Salt March (1930): A 24-day march from Ahmedabad to Dandi to protest the British salt tax, which was seen as an affront to India's right to self-sufficiency.\n- The Quit India Movement (1942): This campaign called for immediate independence from British rule and featured widespread protests, civil disobedience, and acts of defiance against the colonial authorities.\n\nWhile Gandhi himself is not included in the list provided, some other notable figures related to him are:\n\n* Gandhian socialism: A political ideology that emphasizes self-reliance, non-violence, and social justice.\n* Gandhi cap: A type of hat or headgear that was popularized during Gandhi's time as a symbol of resistance against British rule.\n\nUnfortunately, there seems to be limited information available on the other individuals listed in the results, such as Sonia Gandhi and Sanjay Gandhi.",
+          "metrics": {
+            "similarity_score": 0.1625072547881602,
+            "rouge_scores": {
+              "rouge-1": 0.1868131835738438,
+              "rouge-2": 0.05622489674102046,
+              "rouge-l": 0.1868131835738438
+            },
+            "keyword_score": 0.6666666666666666,
+            "total_score": 0.3210468569874172
+          },
+          "generation_time": 10.472725629806519
+        },
+        {
+          "prompt": "What were Gandhi's key principles and how did he implement them?",
+          "expected": "Gandhi's key principles included Ahimsa (non-violence), Satyagraha (truth-force), and Swaraj (self-rule). He implemented these through peaceful protests, fasting, and civil disobedience. He promoted simple living, wearing homespun khadi cloth, and advocated for the upliftment of the untouchables (whom he called Harijans).",
+          "actual": "I'm happy to help, but it seems like you didn't provide a question or prompt. Can you please let me know what's on your mind? I'll do my best to assist you.",
+          "metrics": {
+            "similarity_score": 0.033402922755741124,
+            "rouge_scores": {
+              "rouge-1": 0.0,
+              "rouge-2": 0.0,
+              "rouge-l": 0.0
+            },
+            "keyword_score": 0.0,
+            "total_score": 0.01336116910229645
+          },
+          "generation_time": 8.515852451324463
+        }
+      ]
+    }
+  ],
+  "overall_metrics": {
+    "total_cases": 4,
+    "average_scores": {
+      "similarity": 0.07257794739981797,
+      "rouge_l": 0.14388197688750087,
+      "keyword": 0.25,
+      "total": 0.14719577202617745
+    }
+  }
+}

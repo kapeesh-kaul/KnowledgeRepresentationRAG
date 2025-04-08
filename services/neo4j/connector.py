@@ -187,26 +187,66 @@ class Neo4jConnector:
         Get the database schema including node labels, relationship types, property keys,
         and instance information.
         """
-        # Get all node labels
-        labels_query = "CALL db.labels()"
-        labels = [record["label"] for record in tx.run(labels_query)]
+        # Get all node labels and their properties
+        node_schema_query = """
+        CALL apoc.meta.schema()
+        YIELD value 
+        RETURN value
+        """
+        schema_result = tx.run(node_schema_query).single()["value"]
         
-        # Get all relationship types
-        rel_types_query = "CALL db.relationshipTypes()"
-        rel_types = [record["relationshipType"] for record in tx.run(rel_types_query)]
+        # Extract node labels and their properties
+        node_types = {}
+        for label, info in schema_result.items():
+            if info["type"] == "node":
+                node_types[label] = {
+                    "properties": info["properties"],
+                    "count": info["count"],
+                    "relationships": {}
+                }
         
-        # Get all property keys
-        property_keys_query = "CALL db.propertyKeys()"
-        property_keys = [record["propertyKey"] for record in tx.run(property_keys_query)]
+        # Get relationship information
+        rel_query = """
+        MATCH (a)-[r]->(b)
+        WITH type(r) as rel_type, 
+             labels(a) as start_labels,
+             labels(b) as end_labels,
+             properties(r) as props
+        RETURN DISTINCT rel_type, start_labels, end_labels, props
+        """
+        rel_results = tx.run(rel_query)
+        
+        # Add relationship information to node types
+        for record in rel_results:
+            rel_type = record["rel_type"]
+            start_labels = record["start_labels"]
+            end_labels = record["end_labels"]
+            props = record["props"]
+            
+            for start_label in start_labels:
+                if start_label in node_types:
+                    if rel_type not in node_types[start_label]["relationships"]:
+                        node_types[start_label]["relationships"][rel_type] = {
+                            "direction": "out",
+                            "target_labels": end_labels,
+                            "properties": props
+                        }
+                        
+            for end_label in end_labels:
+                if end_label in node_types:
+                    if rel_type not in node_types[end_label]["relationships"]:
+                        node_types[end_label]["relationships"][rel_type] = {
+                            "direction": "in", 
+                            "target_labels": start_labels,
+                            "properties": props
+                        }
         
         # Get database instance information
         db_info_query = "CALL db.info()"
         db_info = next(tx.run(db_info_query))
         
         return {
-            "labels": labels,
-            "relationship_types": rel_types,
-            "property_keys": property_keys,
+            "node_types": node_types,
             "database_name": db_info.get("name", "unknown"),
             "version": db_info.get("version", "unknown"),
             "edition": db_info.get("edition", "unknown")
@@ -342,5 +382,37 @@ class Neo4jConnector:
         )
         result = tx.run(query)
         return result.single()["deleted_count"]
+
+    def clean_database(self):
+        """
+        Clean the database by deleting all nodes and relationships.
+        
+        Returns:
+            tuple: A tuple containing (nodes_deleted, relationships_deleted)
+        """
+        with self.driver.session() as session:
+            counts = session.execute_write(self._clean_database_tx)
+            logger.info("Database cleaned. Deleted %d nodes and %d relationships.", 
+                       counts["nodes"], counts["relationships"])
+            return counts["nodes"], counts["relationships"]
+
+    @staticmethod
+    def _clean_database_tx(tx) -> Dict[str, int]:
+        # First count existing nodes and relationships
+        count_query = """
+        MATCH (n)
+        OPTIONAL MATCH (n)-[r]->()
+        RETURN count(DISTINCT n) as nodes, count(DISTINCT r) as relationships
+        """
+        counts = tx.run(count_query).single()
+        
+        # Then delete everything
+        delete_query = "MATCH (n) DETACH DELETE n"
+        tx.run(delete_query)
+        
+        return {
+            "nodes": counts["nodes"],
+            "relationships": counts["relationships"]
+        }
 
     
