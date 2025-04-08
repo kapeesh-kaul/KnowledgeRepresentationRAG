@@ -7,34 +7,34 @@
         {
           "prompt": "Where and when was Mahatma Gandhi born, and what was his early education like?",
           "expected": "Mahatma Gandhi was born on October 2, 1869, in Porbandar, Gujarat, India. He studied law in London at the Inner Temple and was called to the bar in 1891. His early education in India was at local schools in Porbandar and Rajkot.",
-          "actual": "I'm sorry, but I couldn't find any information on the birthplace, date of birth, or early education of Mahatma Gandhi in my database. It's possible that this information is not widely documented or available. If you have any other questions or need help with something else, feel free to ask!",
+          "actual": "Mahatma Gandhi was born on October 2, 1869, in Porbandar, a small coastal town in the state of Gujarat, India.\n\nIn terms of his early education, Gandhi attended the local school in Porbandar, where he studied Gujarati, Sanskrit, and English. He later moved to Rajkot, a nearby city, to attend high school at the Kapil Thakkar High School. However, he dropped out of school at the age of 13 due to family circumstances.\n\nGandhi's early education was influenced by his father, Karamchand Gandhi, who was a devout Hindu and a strong advocate for social reform. His mother, Putlibai Gandhi, also played an important role in shaping his values and principles.\n\nIt is worth noting that the query results do not provide detailed information on Gandhi's formative experiences or major life events beyond his early education. However, they do set the stage for his later years as a prominent leader in India's struggle for independence.",
           "metrics": {
-            "similarity_score": 0.019230769230769232,
+            "similarity_score": 0.19913419913419914,
             "rouge_scores": {
-              "rouge-1": 0.20779220293472772,
-              "rouge-2": 0.044444439483951166,
-              "rouge-l": 0.1818181769607018
+              "rouge-1": 0.3076923042182992,
+              "rouge-2": 0.1269841235866858,
+              "rouge-l": 0.2937062902322852
             },
-            "keyword_score": 0.0,
-            "total_score": 0.06223776078051823
+            "keyword_score": 0.5,
+            "total_score": 0.3177655667233652
           },
-          "generation_time": 39.310611963272095
+          "generation_time": 9.650961875915527
         },
         {
           "prompt": "What was Gandhi's experience in South Africa and how did it influence him?",
           "expected": "Gandhi spent 21 years in South Africa (1893-1914) where he developed his political views and philosophy of nonviolent resistance. He faced racial discrimination which led him to fight for civil rights, developing the concept of Satyagraha (truth-force) and becoming a leader in the Indian community's struggle against injustice.",
-          "actual": "I'm sorry, but I couldn't find any information on Mahatma Gandhi's experience in South Africa. It's possible that the records are incomplete or not available in our database. If you're looking for more information on Gandhi's life and legacy, I'd be happy to provide some general insights or direct you to resources that may have more details on his experiences in South Africa.\n\nWould you like me to tell you about Gandhi's early years in South Africa, where he spent 21 years working as a lawyer and becoming involved in the Indian rights movement?",
+          "actual": "**Gandhi's Experience in South Africa**\n\nGandhi's experience in South Africa played a significant role in shaping his philosophy of non-violent resistance, which he would later apply in India's struggle for independence.\n\nIn 1893, Gandhi traveled to South Africa as a young lawyer to work on a case against the British colonial government. At the time, Gandhi was only 24 years old and had recently graduated from law school in London. He arrived in Durban, South Africa, where he faced racial discrimination and prejudice against Indians living in the country.\n\n**The Natal Indian Congress and the Satyagraha Movement**\n\nGandhi soon became involved with the Natal Indian Congress, an organization fighting for equal rights for Indians in South Africa. In 1894, Gandhi was appointed as the president of the Congress, but he resigned after a year due to disagreements within the organization.\n\nHowever, this experience had a lasting impact on Gandhi. He began to develop his ideas about non-violent resistance and civil disobedience, which would later become the hallmark of his movement in India. In 1906, Gandhi returned to South Africa and became involved with the Indian community again, leading a campaign against the \"Black Act,\" a law that discriminated against Indians.\n\nThe experience in South Africa was a formative period for Gandhi, where he developed his leadership skills and refined his ideas about non-violent resistance. He later wrote extensively about this period in his autobiography, \"My Experiments with Truth.\"\n\n**Influence on Gandhi's Later Life**\n\nGandhi's experiences in South Africa had a lasting impact on his life and work. The Satyagraha movement, which he founded during this time, would become the core of his non-violent resistance strategy in India. He applied these principles to various movements, including the Indian independence struggle and the civil rights movement in the United States.\n\n**Conclusion**\n\nGandhi's experience in South Africa was a pivotal moment in his life, where he developed his ideas about non-violent resistance and leadership. This period had a lasting impact on his work and influenced his later struggles for social justice and equality.",
           "metrics": {
-            "similarity_score": 0.07517084282460136,
+            "similarity_score": 0.03242388295769079,
             "rouge_scores": {
-              "rouge-1": 0.2758620642568371,
-              "rouge-2": 0.13235293665333062,
-              "rouge-l": 0.2068965470154579
+              "rouge-1": 0.25961538127958583,
+              "rouge-2": 0.06666666422387521,
+              "rouge-l": 0.25961538127958583
             },
-            "keyword_score": 0.3333333333333333,
-            "total_score": 0.19213730123447792
+            "keyword_score": 0.6666666666666666,
+            "total_score": 0.29085416756695204
           },
-          "generation_time": 13.403130054473877
+          "generation_time": 16.820538997650146
         }
       ]
     },
@@ -45,34 +45,34 @@
         {
           "prompt": "What were some of Gandhi's major campaigns during the Indian independence movement?",
           "expected": "Gandhi led several major campaigns including the Non-Cooperation Movement (1920-22), the Salt March (1930), and the Quit India Movement (1942). He advocated for nonviolent civil disobedience, promoted self-reliance through the spinning wheel (charkha), and worked to unite Hindus and Muslims in the independence struggle.",
-          "actual": "I'd be happy to help you with that question.\n\nIt appears that the results I have don't provide a comprehensive list of Gandhi's major campaigns during the Indian independence movement. However, based on my knowledge, some notable campaigns associated with Mahatma Gandhi include:\n\n- The Non-Cooperation Movement (1920-1922): This campaign aimed to challenge British rule by encouraging Indians not to cooperate with the colonial government in various ways, such as paying taxes, serving on juries, and buying products from Britain.\n- The Salt March (1930): A 24-day march from Ahmedabad to Dandi to protest the British salt tax, which was seen as an affront to India's right to self-sufficiency.\n- The Quit India Movement (1942): This campaign called for immediate independence from British rule and featured widespread protests, civil disobedience, and acts of defiance against the colonial authorities.\n\nWhile Gandhi himself is not included in the list provided, some other notable figures related to him are:\n\n* Gandhian socialism: A political ideology that emphasizes self-reliance, non-violence, and social justice.\n* Gandhi cap: A type of hat or headgear that was popularized during Gandhi's time as a symbol of resistance against British rule.\n\nUnfortunately, there seems to be limited information available on the other individuals listed in the results, such as Sonia Gandhi and Sanjay Gandhi.",
+          "actual": "It seems like you've provided a list of results related to Sanjay Gandhi, the son of Indira Gandhi, who was a prominent Indian politician in his own right. Here are the key points summarized:\n\n1.  **Early Life**: Sanjay Gandhi's father, Karamchand Gandhi, served as the dewan (chief minister) of Porbandar state and later became diwan of Rajkot.\n2.  **Parents**: Sanjay's parents were Indira and Feroze Gandhi, but his stepfather was Kamaladevi Chattopadhyay's husband, who is not mentioned here.\n3.  **Marriage and Children**: Sanjay married Maneka Anand in 1974, when she was 10 years younger than him. They had a son named Varun.\n4.  **Politics**: Sanjay entered politics at an early age and became a key figure in his mother's government. He held various portfolios, including Youth Affairs and Sports, and was instrumental in implementing several policies aimed at modernizing India.\n5.  **Controversies**: Sanjay faced criticism for his authoritarian style of governance and his efforts to impose population control measures on the Indian people.\n6.  **Death**: Sanjay died in a plane crash on June 23, 1980, while performing an aerobatic maneuver.\n\nThese results provide insight into Sanjay Gandhi's life, politics, and controversies surrounding him.",
           "metrics": {
-            "similarity_score": 0.1625072547881602,
+            "similarity_score": 0.019011406844106463,
             "rouge_scores": {
-              "rouge-1": 0.1868131835738438,
-              "rouge-2": 0.05622489674102046,
-              "rouge-l": 0.1868131835738438
+              "rouge-1": 0.10055865593832913,
+              "rouge-2": 0.0,
+              "rouge-l": 0.08938547158078725
             },
-            "keyword_score": 0.6666666666666666,
-            "total_score": 0.3210468569874172
+            "keyword_score": 0.0,
+            "total_score": 0.03442020421187876
           },
-          "generation_time": 10.472725629806519
+          "generation_time": 14.342629194259644
         },
         {
           "prompt": "What were Gandhi's key principles and how did he implement them?",
           "expected": "Gandhi's key principles included Ahimsa (non-violence), Satyagraha (truth-force), and Swaraj (self-rule). He implemented these through peaceful protests, fasting, and civil disobedience. He promoted simple living, wearing homespun khadi cloth, and advocated for the upliftment of the untouchables (whom he called Harijans).",
-          "actual": "I'm happy to help, but it seems like you didn't provide a question or prompt. Can you please let me know what's on your mind? I'll do my best to assist you.",
+          "actual": "**Key Principles of Mahatma Gandhi**\n\nGandhi's core principles, as outlined in his non-violent resistance movement, revolved around Satyagraha (insistence on truth), Swaraj (self-rule), and Sarvodaya (welfare of all). He believed that these principles could bring about social change without resorting to violence.\n\n**Implementation of Key Principles**\n\nGandhi implemented these principles through various means:\n\n1.  **Non-Violent Resistance**: Gandhi employed non-violent resistance in his campaigns, using civil disobedience and boycotts to challenge British rule in India. He drew inspiration from Leo Tolstoy's book \"The Kingdom of God is Within You\" and the writings of Henry David Thoreau.\n2.  **Simple Living**: Gandhi advocated for simple living and self-sufficiency. He believed that individuals should be content with minimal needs, as this would allow them to focus on more important issues.\n3.  **Economic Self-Sufficiency**: Gandhi emphasized the importance of economic self-sufficiency for India's independence. He promoted the idea of \"swadeshi\" (self-reliance) and encouraged Indians to produce their own goods rather than relying on foreign imports.\n\n**Notable Campaigns**\n\nSome notable campaigns where Gandhi implemented these principles include:\n\n*   The 1917 Champaran Satyagraha, where he fought against British exploitation in the Bihar region.\n*   The 1930 Salt March, a 24-day march to the sea to protest the British salt tax.\n*   The Quit India Movement (1942), which called for immediate independence from Britain.\n\n**Influence and Legacy**\n\nGandhi's principles have influenced civil rights movements across the world. His philosophy of non-violent resistance has inspired leaders such as Martin Luther King Jr., Nelson Mandela, and Aung San Suu Kyi.",
           "metrics": {
-            "similarity_score": 0.033402922755741124,
+            "similarity_score": 0.03142857142857143,
             "rouge_scores": {
-              "rouge-1": 0.0,
-              "rouge-2": 0.0,
-              "rouge-l": 0.0
+              "rouge-1": 0.17117116839339344,
+              "rouge-2": 0.028673832669159134,
+              "rouge-l": 0.1621621593843844
             },
-            "keyword_score": 0.0,
-            "total_score": 0.01336116910229645
+            "keyword_score": 0.42857142857142855,
+            "total_score": 0.18979150495817246
           },
-          "generation_time": 8.515852451324463
+          "generation_time": 15.944653511047363
         }
       ]
     }
@@ -80,10 +80,10 @@
   "overall_metrics": {
     "total_cases": 4,
     "average_scores": {
-      "similarity": 0.07257794739981797,
-      "rouge_l": 0.14388197688750087,
-      "keyword": 0.25,
-      "total": 0.14719577202617745
+      "similarity": 0.07049951509114195,
+      "rouge_l": 0.20121732561926067,
+      "keyword": 0.3988095238095238,
+      "total": 0.2082078608650921
     }
   }
 }

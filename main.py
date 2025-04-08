@@ -1,6 +1,8 @@
 import logging
 from core.settings import settings
 from services.utils.graph_builder import GraphBuilder
+from services.utils.corpus_builder import CorpusBuilder
+from services.retrieval.search import SearchEngine
 import click
 from services.neo4j.connector import Neo4jConnector
 from services.utils.query_generator import QueryGenerator
@@ -31,7 +33,7 @@ def build_graph(search_term : str):
 @cli.command(
     help = "Clear the Neo4j database."
 )
-def clear_database():
+def clear_graph():
     neo4j_conn = Neo4jConnector(settings.NEO4J_URI, settings.NEO4J_USER, settings.NEO4J_PASSWORD)
     neo4j_conn.clean_database()
 
@@ -158,6 +160,70 @@ def evaluate_responses(test_file: str, output_file: str):
         logger.error(f"Error during evaluation: {str(e)}")
     finally:
         query_generator.close()
+
+# New commands for corpus building and search
+@cli.command(
+    help="Build a text corpus from Wikipedia articles."
+)
+@click.option('--search_term', prompt="Enter a search term for Wikipedia", type=str, help="The search term to use for Wikipedia.")
+@click.option('--max_depth', default=2, help="Maximum depth to follow links.")
+@click.option('--max_pages', default=10, help="Maximum number of pages to process.")
+@click.option('--chunk_size', default=1000, help="Size of text chunks.")
+@click.option('--chunk_overlap', default=200, help="Overlap between chunks.")
+def build_corpus(search_term: str, max_depth: int, max_pages: int, chunk_size: int, chunk_overlap: int):
+    """
+    Build a text corpus from Wikipedia articles.
+    """
+    try:
+        logger.info(f"Building corpus for search term: {search_term}")
+        corpus_builder = CorpusBuilder(
+            chunk_size=chunk_size,
+            chunk_overlap=chunk_overlap,
+            max_depth=max_depth,
+            max_pages=max_pages
+        )
+        
+        corpus_builder.build_corpus(search_term)
+        corpus_builder.save_corpus()
+        logger.info("Corpus built and saved successfully")
+        
+    except Exception as e:
+        logger.error(f"Error building corpus: {e}")
+        raise
+
+@cli.command(
+    help="Search the corpus for relevant chunks."
+)
+@click.option('--query', prompt="Enter your search query", type=str, help="The query to search for.")
+@click.option('--top_k', default=5, help="Number of results to return.")
+def search_corpus(query: str, top_k: int):
+    """
+    Search the corpus for relevant chunks.
+    """
+    try:
+        corpus_builder = CorpusBuilder()
+        corpus_builder.load_corpus()
+        
+        search_engine = SearchEngine(corpus_builder)
+        results = search_engine.search(query, top_k=top_k)
+        
+        print("\nSearch Results:")
+        for i, chunk in enumerate(results, 1):
+            print(f"\n{i}. {chunk.content}")
+            print(f"Source: {chunk.source}")
+            print(f"Section: {chunk.metadata.get('section', 'N/A')}")
+            print("-" * 80)
+            
+    except Exception as e:
+        logger.error(f"Error searching corpus: {e}")
+        raise
+
+@cli.command(
+    help="Clear the corpus."
+)
+def clear_corpus():
+    corpus_builder = CorpusBuilder()
+    corpus_builder.clear_corpus()
 
 if __name__ == "__main__":
     cli()

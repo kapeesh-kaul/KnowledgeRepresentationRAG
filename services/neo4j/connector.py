@@ -157,6 +157,7 @@ class Neo4jConnector:
             else:
                 results = session.execute_read(self._execute_query_tx, query, params)
             logger.info("Executed query: %s with params: %s", query, params)
+            # logger.info("Results: %s", results)
             return results
         
     @staticmethod

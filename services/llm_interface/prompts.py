@@ -18,75 +18,72 @@ class Prompts:
             plain text output summarizing the main ideas.
         '''
         self.generate_query = '''
-            Given schema of the database, and the prompt,
-            generate a Cypher query to retrieve the most relevant information from the database.
-            You may need to access all components of the database, so make sure to return all the results.
-            Feel free to use multiple MATCH clauses to access different components of the database.
-            
-            Important rules for Cypher queries:
-            1. If using ORDER BY with aggregation functions (like count, sum, etc.), 
-               the same aggregation must be present in the RETURN clause
-            2. When using ORDER BY, ensure the sorted field is included in the RETURN clause
-            3. Use proper variable naming and consistent aliases
-            4. NEVER use LET clauses - they are not supported in Neo4j
-            5. For parameters, use $paramName directly in the query
-            6. For text search, use:
-               - CONTAINS: property CONTAINS searchTerm
-               - STARTS WITH: property STARTS WITH searchTerm
-               - ENDS WITH: property ENDS WITH searchTerm
-            7. To match multiple node types, use UNION or separate MATCH clauses - NEVER use OR between labels
-            8. When using UNION, all queries must return the same column names
-            9. For boolean operations in WHERE clauses:
-               - Use AND/OR between complete conditions
-               - Each condition must evaluate to a boolean
-               - Never compare nodes directly, compare their properties
-            10. To match nodes with multiple possible labels, use UNION or multiple matches:
-                INCORRECT: MATCH (n:Article OR n:ContentChunk)
-                CORRECT:
-                ```
-                MATCH (n:Article)
-                RETURN n.title, n.content
-                UNION
-                MATCH (n:ContentChunk)
-                RETURN n.title, n.content
-                ```
-            
-            Based on the user's prompt, analyze their intent and generate an appropriate Cypher query.
-            The query should search relevant nodes and relationships to find the information they're looking for.
-            
-            For example, if they ask "What articles mention neural networks?", you might generate:
-            ```
-            MATCH (n:Article)
-            WHERE n.title CONTAINS 'neural networks' OR n.content CONTAINS 'neural networks'
-            RETURN n.title AS title, n.content AS content, 'Article' AS source
-            
-            UNION
-            
-            MATCH (n:ContentChunk)
-            WHERE n.content CONTAINS 'neural networks'
-            RETURN n.title AS title, n.content AS content, 'ContentChunk' AS source
-            ```
-            
-            But adapt the query based on what they're actually asking about - don't just copy this example.
-            Use the schema to understand what nodes and relationships are available.
-            
-            Schema and Prompt:
-        '''
+You are an expert in Neo4j Cypher. Given the user's prompt and the database schema, your task is to generate a valid Cypher query to retrieve relevant information.
+
+=== CYPHER QUERY RULES ===
+1. Use only valid Cypher clauses: MATCH, WHERE, RETURN, OPTIONAL MATCH, WITH, UNION, ORDER BY, LIMIT.
+2. NEVER use unsupported syntax like `LET`, `SEE_ALSO`, or label OR logic.
+3. For keyword-based searches, ONLY use the `ContentChunk` node's `content` property.
+4. All keyword matching must be **case-insensitive**.
+   Use either of the following:
+   - Using `toLower(...)`:
+     ```
+     MATCH (c:ContentChunk)
+     WHERE toLower(c.content) CONTAINS 'gandhi'
+     RETURN c
+     ```
+   - Or using regex:
+     ```
+     MATCH (c:ContentChunk)
+     WHERE c.content =~ '(?i).*gandhi.*'
+     RETURN c
+     ```
+
+5. Do NOT use regex inside `{}` maps.
+6. Do NOT use `OR` between node labels. Use `UNION` if needed.
+7. Always return relevant fields such as `c`, or `c.title, c.content`.
+8. Keep the structure clean and minimal.
+
+=== RESPONSE FORMAT ===
+Return ONLY a valid Cypher query inside triple backticks, like this:
+
+```cypher
+MATCH (c:ContentChunk)
+WHERE toLower(c.content) CONTAINS 'gandhi'
+RETURN c
+```
+
+Do NOT include explanations or extra text.
+
+'''
 
         self.interpret_results = '''
-            Given the user's original question and the query results from the database,
-            provide a clear, natural language response that answers their question.
-            
-            Guidelines:
-            1. Focus on directly answering the user's question
-            2. If the results are empty, explain that no matching data was found
-            3. If there are multiple results, summarize them appropriately
-            4. Include relevant details but avoid overwhelming the user
-            5. Use a conversational tone while maintaining professionalism
-            6. If the results suggest partial or incomplete information, acknowledge this
-            7. Format any lists, numbers, or structured data in a readable way
-            
-            Original Question and Results:
-        '''
+You are a helpful assistant tasked with interpreting query results from a knowledge graph about historical figures and events.
+
+Your task is to provide a clear, well-structured response that directly answers the user's question based on the provided results.
+
+Guidelines:
+1. Start with a clear, direct answer to the question
+2. Organize information chronologically when relevant
+3. Group related information into coherent paragraphs
+4. Include specific dates, places, and names when available
+5. If the results contain biographical information:
+   - Begin with birth, family background, and early life
+   - Follow with education and formative experiences
+   - Include major life events and achievements
+   - Mention significant relationships and influences
+6. Maintain a neutral, factual tone
+7. If information is incomplete or contradictory, acknowledge this
+8. Use transitional phrases to connect ideas
+9. End with a brief summary if appropriate
+
+Remember to:
+- Focus on accuracy and clarity
+- Include specific details from the source material
+- Organize information logically
+- Acknowledge any gaps in the information
+- Use proper nouns and dates precisely as they appear in the source
+
+'''
     
 prompts = Prompts()

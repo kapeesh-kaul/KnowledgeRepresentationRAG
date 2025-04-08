@@ -35,14 +35,15 @@ class LLMHandler:
             return None
 
         try:
-            # Format kwargs into a string if provided
-            kwargs_str = str(kwargs) if kwargs else ""
+            # Combine prompt and kwargs into a single message
+            full_prompt = prompt
+            if kwargs:
+                full_prompt += "\n\nAdditional context:\n" + str(kwargs)
 
             response = chat(
                 model=self.model,
                 messages=[
-                    {"role": "user", "content": prompt},
-                    {"role": "user", "content": kwargs_str}
+                    {"role": "user", "content": full_prompt}
                 ]
             )
 

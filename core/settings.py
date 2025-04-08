@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 from dotenv import load_dotenv
 
 class Settings:
@@ -13,6 +14,11 @@ class Settings:
         
         # Configuration for LLM
         self.LLM_MODEL = os.getenv("LLM_MODEL")
+        
+        # Configuration for Corpus Storage
+        self.CORPUS_STORAGE_PATH = Path('.data/corpus')
+        # Ensure the directory exists
+        self.CORPUS_STORAGE_PATH.mkdir(parents=True, exist_ok=True)
 
 # Create a singleton instance of Settings
 settings = Settings() 

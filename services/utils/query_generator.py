@@ -37,8 +37,14 @@ class QueryGenerator:
             # Format the prompt with schema and user query
             full_prompt = f"{prompts.generate_query}\nSchema:\n{schema}\n\nUser Query:\n{user_prompt}"
             
+            # Log the full prompt being sent to LLM
+            logger.info(f"Sending prompt to LLM:\n{full_prompt}")
+            
             # Get the response from the LLM
             response = self.llm_handler.run_prompt(full_prompt)
+            
+            # Log the raw response from LLM
+            logger.info(f"Raw LLM response:\n{response}")
             
             if not response:
                 logger.error("Failed to generate query: Empty response from LLM")
@@ -47,13 +53,20 @@ class QueryGenerator:
             # Extract the query from the response
             # The response should contain a Cypher query between triple backticks
             if "```" in response:
-                query = response.split("```")[1].strip()
-                if query.startswith("cypher") or query.startswith("Cypher"):
-                    query = query.split("\n", 1)[1]
-                return query
-            else:
-                logger.warning("No query found in LLM response")
-                return None
+                # Split by triple backticks and get the content between them
+                parts = response.split("```")
+                for i in range(len(parts)):
+                    if i % 2 == 1:  # This is content between backticks
+                        content = parts[i].strip()
+                        if content.startswith("cypher"):
+                            content = content.split("\n", 1)[1]  # Remove the cypher keyword
+                        content = content.strip()
+                        if content:  # If we found non-empty content
+                            logger.info(f"Extracted query:\n{content}")
+                            return content
+            
+            logger.warning("No valid query found in LLM response")
+            return None
                 
         except Exception as e:
             logger.error(f"Error generating query: {e}")
@@ -117,11 +130,29 @@ class QueryGenerator:
             str: Natural language interpretation of the results
         """
         try:
-            # Format the prompt with the original question and results
-            full_prompt = f"{prompts.interpret_results}\nQuestion: {user_prompt}\n\nResults:\n{results}"
+            # Format results into a more readable string
+            formatted_results = []
+            for i, result in enumerate(results, 1):
+                if isinstance(result, dict):
+                    formatted_result = []
+                    for key, value in result.items():
+                        if isinstance(value, dict):
+                            formatted_result.append(f"{key}: {value.get('properties', {}).get('title', 'N/A')}")
+                        else:
+                            formatted_result.append(f"{key}: {value}")
+                    formatted_results.append(f"Result {i}: " + ", ".join(formatted_result))
+                else:
+                    formatted_results.append(f"Result {i}: {str(result)}")
             
+            # Format the prompt with the original question and formatted results
+            full_prompt = f"{prompts.interpret_results}\n\nQuestion: {user_prompt}\n\nQuery Results:\n" + "\n".join(formatted_results)
+            
+            logger.info(f"Interpreting results for prompt: {full_prompt}")
+
             # Get the interpretation from the LLM
             interpretation = self.llm_handler.run_prompt(full_prompt)
+            
+            logger.info(f"Raw interpretation from LLM: {interpretation}")
             
             if not interpretation:
                 logger.error("Failed to interpret results: Empty response from LLM")
