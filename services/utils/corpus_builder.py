@@ -24,6 +24,9 @@ class TextChunk:
     metadata: Dict[str, any] = None
     embedding: Optional[np.ndarray] = None
 
+    def __str__(self):
+        return f"Chunk(content={self.content}, source={self.source}, metadata={self.metadata})"
+
 class CorpusBuilder:
     """
     A class to build and manage a scalable text corpus with content chunks.

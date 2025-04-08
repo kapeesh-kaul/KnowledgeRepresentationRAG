@@ -84,6 +84,7 @@ Remember to:
 - Acknowledge any gaps in the information
 - Use proper nouns and dates precisely as they appear in the source
 
+Query and results:
 '''
     
 prompts = Prompts()

@@ -1,8 +1,11 @@
 import logging
+from rich import print
 from core.settings import settings
 from services.utils.graph_builder import GraphBuilder
 from services.utils.corpus_builder import CorpusBuilder
 from services.retrieval.search import SearchEngine
+from services.llm_interface.handler import LLMHandler
+from services.llm_interface.prompts import prompts
 import click
 from services.neo4j.connector import Neo4jConnector
 from services.utils.query_generator import QueryGenerator
@@ -18,7 +21,7 @@ logger = logging.getLogger(__name__)
 @click.group()
 def cli():
     """
-    CLI tool for interacting with a Neo4j database.
+    CLI tool for interacting with the Neo4j based LLM service and the corpus based LLM service.
     
     """
 
@@ -41,7 +44,7 @@ def clear_graph():
     help = "Get the schema of the Neo4j database."
 )
 @click.option('--user_prompt', prompt="Enter a user prompt", type=str, help="The user prompt to use for the query.")
-def execute_query(user_prompt: str):
+def query_graph(user_prompt: str):
     query_generator = QueryGenerator()
     try:
         results = query_generator.execute_query_with_retry(user_prompt)
@@ -62,7 +65,7 @@ def execute_query(user_prompt: str):
 )
 @click.option('--test_file', type=str, default='test_cases.json', help="JSON file containing test cases")
 @click.option('--output_file', type=str, default='evaluation_results.json', help="File to save evaluation results")
-def evaluate_responses(test_file: str, output_file: str):
+def evaluate_graph(test_file: str, output_file: str):
     """
     Evaluate the accuracy of query responses using predefined test cases.
     """
@@ -196,7 +199,7 @@ def build_corpus(search_term: str, max_depth: int, max_pages: int, chunk_size: i
 )
 @click.option('--query', prompt="Enter your search query", type=str, help="The query to search for.")
 @click.option('--top_k', default=5, help="Number of results to return.")
-def search_corpus(query: str, top_k: int):
+def query_corpus(query: str, top_k: int):
     """
     Search the corpus for relevant chunks.
     """
@@ -207,16 +210,149 @@ def search_corpus(query: str, top_k: int):
         search_engine = SearchEngine(corpus_builder)
         results = search_engine.search(query, top_k=top_k)
         
-        print("\nSearch Results:")
+        logger.info("\nSearch Results:")
         for i, chunk in enumerate(results, 1):
-            print(f"\n{i}. {chunk.content}")
-            print(f"Source: {chunk.source}")
-            print(f"Section: {chunk.metadata.get('section', 'N/A')}")
-            print("-" * 80)
+            logger.info(
+                f"\n{i}. {chunk.content}\n"
+                f"Source: {chunk.source}\n"
+                f"Section: {chunk.metadata.get('section', 'N/A')}\n"
+            )
+
+        llm_handler = LLMHandler(model=settings.LLM_MODEL)
+        data = {
+            "query": query,
+            "results": results
+        }
+        
+        response = llm_handler.run_prompt_with_data(
+            prompt=prompts.interpret_results,
+            data=data
+        )
+        logger.info(response)
             
     except Exception as e:
         logger.error(f"Error searching corpus: {e}")
         raise
+
+@cli.command(
+    help="evaluate the corpus based LLM service."
+)
+@click.option('--test_file', type=str, default='test_cases.json', help="JSON file containing test cases")
+@click.option('--output_file', type=str, default='evaluation_results.json', help="File to save evaluation results")
+def evaluate_corpus(test_file: str, output_file: str):
+    """
+    Evaluate the accuracy of query responses using predefined test cases.
+    """
+    try:
+        with open(test_file, 'r') as f:
+            test_data = json.load(f)
+        
+        corpus_builder = CorpusBuilder()
+        corpus_builder.load_corpus()
+        search_engine = SearchEngine(corpus_builder)
+        llm_handler = LLMHandler(model=settings.LLM_MODEL)
+        metrics = EvaluationMetrics()
+        
+        results = {
+            'categories': [],
+            'overall_metrics': {
+                'total_cases': 0,
+                'average_scores': {}
+            }
+        }
+        
+        total_scores = {
+            'similarity': 0,
+            'rouge_l': 0,
+            'keyword': 0,
+            'total': 0
+        }
+        
+        for category in test_data['categories']:
+            category_results = {
+                'name': category['name'],
+                'description': category['description'],
+                'test_cases': []
+            }
+            
+            for test_case in category['test_cases']:
+                prompt = test_case['prompt']
+                expected = test_case['expected_answer']
+                keywords = test_case.get('keywords', [])
+                
+                logger.info(f"\nProcessing test case: {prompt}")
+                
+                try:
+                    start_time = time.time()
+                    
+                    # Search corpus and get relevant chunks
+                    search_results = search_engine.search(prompt, top_k=5)
+                    
+                    # Prepare data for LLM
+                    data = {
+                        "query": prompt,
+                        "results": search_results
+                    }
+                    
+                    # Get LLM response
+                    response = llm_handler.run_prompt_with_data(
+                        prompt=prompts.interpret_results,
+                        data=data
+                    )
+                    
+                    generation_time = time.time() - start_time
+                    
+                    if response:
+                        evaluation = metrics.evaluate_response(response, expected, keywords)
+                        
+                        # Update total scores
+                        total_scores['similarity'] += evaluation['similarity_score']
+                        total_scores['rouge_l'] += evaluation['rouge_scores']['rouge-l']
+                        total_scores['keyword'] += evaluation['keyword_score']
+                        total_scores['total'] += evaluation['total_score']
+                        
+                        case_result = {
+                            'prompt': prompt,
+                            'expected': expected,
+                            'actual': response,
+                            'metrics': evaluation,
+                            'generation_time': generation_time
+                        }
+                        category_results['test_cases'].append(case_result)
+                        
+                        logger.info(f"Score: {evaluation['total_score']:.2f}")
+                        logger.info(f"Generation time: {generation_time:.2f}s")
+                
+                except Exception as e:
+                    logger.error(f"Error processing test case: {str(e)}")
+            
+            results['categories'].append(category_results)
+        
+        # Calculate overall metrics
+        total_cases = sum(len(cat['test_cases']) for cat in results['categories'])
+        if total_cases > 0:
+            results['overall_metrics']['total_cases'] = total_cases
+            results['overall_metrics']['average_scores'] = {
+                'similarity': total_scores['similarity'] / total_cases,
+                'rouge_l': total_scores['rouge_l'] / total_cases,
+                'keyword': total_scores['keyword'] / total_cases,
+                'total': total_scores['total'] / total_cases
+            }
+        
+        # Save results
+        with open(output_file, 'w') as f:
+            json.dump(results, f, indent=2)
+        
+        # Print summary
+        logger.info("\nEvaluation Summary:")
+        logger.info(f"Total test cases: {total_cases}")
+        logger.info(f"Average similarity score: {results['overall_metrics']['average_scores']['similarity']:.2f}")
+        logger.info(f"Average ROUGE-L score: {results['overall_metrics']['average_scores']['rouge_l']:.2f}")
+        logger.info(f"Average keyword score: {results['overall_metrics']['average_scores']['keyword']:.2f}")
+        logger.info(f"Average total score: {results['overall_metrics']['average_scores']['total']:.2f}")
+        
+    except Exception as e:
+        logger.error(f"Error during evaluation: {str(e)}")
 
 @cli.command(
     help="Clear the corpus."

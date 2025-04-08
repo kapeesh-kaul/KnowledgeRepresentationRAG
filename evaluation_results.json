@@ -7,34 +7,34 @@
         {
           "prompt": "Where and when was Mahatma Gandhi born, and what was his early education like?",
           "expected": "Mahatma Gandhi was born on October 2, 1869, in Porbandar, Gujarat, India. He studied law in London at the Inner Temple and was called to the bar in 1891. His early education in India was at local schools in Porbandar and Rajkot.",
-          "actual": "Mahatma Gandhi was born on October 2, 1869, in Porbandar, a small coastal town in the state of Gujarat, India.\n\nIn terms of his early education, Gandhi attended the local school in Porbandar, where he studied Gujarati, Sanskrit, and English. He later moved to Rajkot, a nearby city, to attend high school at the Kapil Thakkar High School. However, he dropped out of school at the age of 13 due to family circumstances.\n\nGandhi's early education was influenced by his father, Karamchand Gandhi, who was a devout Hindu and a strong advocate for social reform. His mother, Putlibai Gandhi, also played an important role in shaping his values and principles.\n\nIt is worth noting that the query results do not provide detailed information on Gandhi's formative experiences or major life events beyond his early education. However, they do set the stage for his later years as a prominent leader in India's struggle for independence.",
+          "actual": "Mahatma Gandhi was born on October 2, 1869, in Porbandar, a small coastal town in the state of Gujarat, India. His early education was limited, and he was homeschooled by his parents. In 1888, at the age of 19, Gandhi moved to South Africa to work as an apprentice in a local law firm.\n\nGandhi's experiences in South Africa had a significant impact on his life and political career. He was exposed to the harsh realities of racial segregation and discrimination, which led him to develop his philosophy of non-violent resistance, known as Satyagraha. In 1906, Gandhi adopted this methodology during a mass protest meeting in Johannesburg, where he urged Indians to defy the new law requiring registration of their population.\n\nIn 1909, Gandhi published his book Hind Swaraj, which declared that British rule had been established in India with the co-operation of Indians and would collapse if Indians refused to co-operate. At the age of 40, Gandhi's ideas about Indian independence and self-rule began to gain traction.\n\nGandhi returned to India in 1915 and became involved in the Indian independence movement. He was influenced by the Tamil moral text Tirukku\u1e5ba\u1e37 and the writings of Leo Tolstoy. In his struggle for Indian independence, Gandhi worked closely with other leaders, including Jawaharlal Nehru, who later described Gandhi's socialism as differing from Western socialism due to its emphasis on non-violence.\n\nIn 1942, Gandhi demanded immediate independence for India, which led to widespread protests and arrests. The British responded by imprisoning Gandhi and tens of thousands of Congress leaders. Meanwhile, the Muslim League, led by Muhammad Ali Jinnah, pushed for a separate homeland for Muslims in Pakistan. This led to the eventual partition of India in 1947.\n\nThroughout his life, Gandhi remained committed to non-violent resistance and public service. He continued to advocate for Indian independence until his assassination on January 30, 1948.",
           "metrics": {
-            "similarity_score": 0.19913419913419914,
+            "similarity_score": 0.08105646630236794,
             "rouge_scores": {
-              "rouge-1": 0.3076923042182992,
-              "rouge-2": 0.1269841235866858,
-              "rouge-l": 0.2937062902322852
+              "rouge-1": 0.19642856897959182,
+              "rouge-2": 0.08875739431795111,
+              "rouge-l": 0.17857142612244903
             },
-            "keyword_score": 0.5,
-            "total_score": 0.3177655667233652
+            "keyword_score": 0.6666666666666666,
+            "total_score": 0.2859940143576819
           },
-          "generation_time": 9.650961875915527
+          "generation_time": 8.084326028823853
         },
         {
           "prompt": "What was Gandhi's experience in South Africa and how did it influence him?",
           "expected": "Gandhi spent 21 years in South Africa (1893-1914) where he developed his political views and philosophy of nonviolent resistance. He faced racial discrimination which led him to fight for civil rights, developing the concept of Satyagraha (truth-force) and becoming a leader in the Indian community's struggle against injustice.",
-          "actual": "**Gandhi's Experience in South Africa**\n\nGandhi's experience in South Africa played a significant role in shaping his philosophy of non-violent resistance, which he would later apply in India's struggle for independence.\n\nIn 1893, Gandhi traveled to South Africa as a young lawyer to work on a case against the British colonial government. At the time, Gandhi was only 24 years old and had recently graduated from law school in London. He arrived in Durban, South Africa, where he faced racial discrimination and prejudice against Indians living in the country.\n\n**The Natal Indian Congress and the Satyagraha Movement**\n\nGandhi soon became involved with the Natal Indian Congress, an organization fighting for equal rights for Indians in South Africa. In 1894, Gandhi was appointed as the president of the Congress, but he resigned after a year due to disagreements within the organization.\n\nHowever, this experience had a lasting impact on Gandhi. He began to develop his ideas about non-violent resistance and civil disobedience, which would later become the hallmark of his movement in India. In 1906, Gandhi returned to South Africa and became involved with the Indian community again, leading a campaign against the \"Black Act,\" a law that discriminated against Indians.\n\nThe experience in South Africa was a formative period for Gandhi, where he developed his leadership skills and refined his ideas about non-violent resistance. He later wrote extensively about this period in his autobiography, \"My Experiments with Truth.\"\n\n**Influence on Gandhi's Later Life**\n\nGandhi's experiences in South Africa had a lasting impact on his life and work. The Satyagraha movement, which he founded during this time, would become the core of his non-violent resistance strategy in India. He applied these principles to various movements, including the Indian independence struggle and the civil rights movement in the United States.\n\n**Conclusion**\n\nGandhi's experience in South Africa was a pivotal moment in his life, where he developed his ideas about non-violent resistance and leadership. This period had a lasting impact on his work and influenced his later struggles for social justice and equality.",
+          "actual": "**Gandhi's Experience in South Africa and its Influence**\n\nMahatma Gandhi spent approximately 21 years in South Africa (1893-1914), where he gained significant experience that profoundly influenced his later life and work. During this period, Gandhi worked as a lawyer and became involved in the Indian community's struggles against colonial oppression.\n\nGandhi's early experiences in South Africa began in 1893 when he traveled to the Transvaal region to work on a diamond mine. He was initially employed by a firm that provided contracts for Indian laborers, but soon took up legal work himself. In 1896, Gandhi moved to Johannesburg and opened his own law practice.\n\nIn 1902, during the Natal Indian Congress's protest against the registration Act of 1902, Gandhi adopted his method of Satyagraha (devotion to the truth) for nonviolent protests for the first time. This approach emphasized suffering, persuasion, and public relations skills. Gandhi used this strategy to resist the colonial authorities and the registration Act.\n\nGandhi's experiences in South Africa also led him to develop his unique style of dress, which became an iconic symbol of Indian identity. He popularized a simple cap, known as the \"khadi\" hat or \"Gandhi cap,\" which was made from locally sourced cotton. This attire reflected Gandhi's emphasis on cultural pride and self-reliance.\n\nAfter returning to India in 1915, Gandhi incorporated his South African experiences into his Indian independence movement. He used Satyagraha techniques to organize protests, nonviolent resistance, and civil disobedience. His message of truth, nonviolence, and self-reliance resonated deeply with the Indian people.\n\n**Timeline:**\n\n* 1893-1914: Gandhi spent 21 years in South Africa.\n* 1902: Gandhi adopted Satyagraha for the first time during the Natal Indian Congress's protest against the registration Act.\n* 1906: The Transvaal government promulgated a new Act compelling registration of the colony's Indian and Chinese populations, prompting Gandhi to lead a mass protest meeting in Johannesburg on September 11th.\n\n**Influences and Significance:**\n\nGandhi's experiences in South Africa deeply influenced his later life and work. His approach to nonviolent protests, simple dress, and emphasis on cultural pride and self-reliance became iconic symbols of Indian identity. Gandhi's influence extended beyond India, shaping the global movement for civil rights and social justice.\n\nNote: The information provided is based on the provided query results from the knowledge graph, which may not be exhaustive or entirely accurate.",
           "metrics": {
-            "similarity_score": 0.03242388295769079,
+            "similarity_score": 0.057494866529774126,
             "rouge_scores": {
-              "rouge-1": 0.25961538127958583,
-              "rouge-2": 0.06666666422387521,
-              "rouge-l": 0.25961538127958583
+              "rouge-1": 0.20553359396459875,
+              "rouge-2": 0.07272727058377473,
+              "rouge-l": 0.19762845562467782
             },
-            "keyword_score": 0.6666666666666666,
-            "total_score": 0.29085416756695204
+            "keyword_score": 0.8333333333333334,
+            "total_score": 0.332286483299313
           },
-          "generation_time": 16.820538997650146
+          "generation_time": 9.91023564338684
         }
       ]
     },
@@ -45,34 +45,34 @@
         {
           "prompt": "What were some of Gandhi's major campaigns during the Indian independence movement?",
           "expected": "Gandhi led several major campaigns including the Non-Cooperation Movement (1920-22), the Salt March (1930), and the Quit India Movement (1942). He advocated for nonviolent civil disobedience, promoted self-reliance through the spinning wheel (charkha), and worked to unite Hindus and Muslims in the independence struggle.",
-          "actual": "It seems like you've provided a list of results related to Sanjay Gandhi, the son of Indira Gandhi, who was a prominent Indian politician in his own right. Here are the key points summarized:\n\n1.  **Early Life**: Sanjay Gandhi's father, Karamchand Gandhi, served as the dewan (chief minister) of Porbandar state and later became diwan of Rajkot.\n2.  **Parents**: Sanjay's parents were Indira and Feroze Gandhi, but his stepfather was Kamaladevi Chattopadhyay's husband, who is not mentioned here.\n3.  **Marriage and Children**: Sanjay married Maneka Anand in 1974, when she was 10 years younger than him. They had a son named Varun.\n4.  **Politics**: Sanjay entered politics at an early age and became a key figure in his mother's government. He held various portfolios, including Youth Affairs and Sports, and was instrumental in implementing several policies aimed at modernizing India.\n5.  **Controversies**: Sanjay faced criticism for his authoritarian style of governance and his efforts to impose population control measures on the Indian people.\n6.  **Death**: Sanjay died in a plane crash on June 23, 1980, while performing an aerobatic maneuver.\n\nThese results provide insight into Sanjay Gandhi's life, politics, and controversies surrounding him.",
+          "actual": "Gandhi's Major Campaigns in the Indian Independence Movement\n\nMahatma Gandhi was a key figure in India's struggle for independence from British rule. His campaigns and movements played a significant role in shaping the country's history.\n\nEarly Life and Influence (1869-1915)\nGandhi was born on October 2, 1869, in Porbandar, Gujarat, India. He grew up in a Hindu family and was influenced by his parents' strong sense of social justice and morality. Gandhi studied law in London, where he became exposed to the ideas of Henry David Thoreau and Leo Tolstoy, which shaped his philosophy of non-violent resistance.\n\nNon-Cooperation Movement (1920-1922)\nIn 1920, Gandhi launched the Non-Cooperation Movement, which aimed to boycott British goods and institutions. He encouraged Indians to wear khadi cloth, boycott British titles and honors, and resign from government employment. The movement gained widespread popularity, but was met with violence and repression by the British authorities.\n\nQuit India Movement (1942)\nDuring World War II, Gandhi intensified his demand for independence, calling for the British to \"Quit India\" in a 1942 speech in Mumbai. This movement, also known as the Quit India Movement, was marked by widespread civil disobedience and protests. The British responded quickly, arresting Gandhi and other leaders of the Congress Party.\n\nDirect Action Day and Partition (1946)\nIn August 1946, the Muslim League, led by Muhammad Ali Jinnah, organized a Direct Action Day in Calcutta, which sparked violence against Hindus and the torching of their property. The British government failed to intervene, leading to a wave of retaliatory violence across India. Gandhi visited riot-prone areas to appeal for calm.\n\nKey Dates:\n\n* 1920: Non-Cooperation Movement begins\n* 1922: Gandhi is arrested and sentenced to six years' imprisonment\n* 1942: Quit India Movement begins\n* 1946: Direct Action Day sparks violence and partition\n\nGandhi's campaigns and movements had a profound impact on India's struggle for independence. His philosophy of non-violent resistance inspired millions of Indians to take part in civil disobedience and protests, ultimately contributing to the country's freedom from British rule in 1947.",
           "metrics": {
-            "similarity_score": 0.019011406844106463,
+            "similarity_score": 0.07767752059631228,
             "rouge_scores": {
-              "rouge-1": 0.10055865593832913,
-              "rouge-2": 0.0,
-              "rouge-l": 0.08938547158078725
+              "rouge-1": 0.15254237023735998,
+              "rouge-2": 0.051724135765127584,
+              "rouge-l": 0.1355932176949871
             },
-            "keyword_score": 0.0,
-            "total_score": 0.03442020421187876
+            "keyword_score": 0.5,
+            "total_score": 0.22174897354702106
           },
-          "generation_time": 14.342629194259644
+          "generation_time": 8.802875757217407
         },
         {
           "prompt": "What were Gandhi's key principles and how did he implement them?",
           "expected": "Gandhi's key principles included Ahimsa (non-violence), Satyagraha (truth-force), and Swaraj (self-rule). He implemented these through peaceful protests, fasting, and civil disobedience. He promoted simple living, wearing homespun khadi cloth, and advocated for the upliftment of the untouchables (whom he called Harijans).",
-          "actual": "**Key Principles of Mahatma Gandhi**\n\nGandhi's core principles, as outlined in his non-violent resistance movement, revolved around Satyagraha (insistence on truth), Swaraj (self-rule), and Sarvodaya (welfare of all). He believed that these principles could bring about social change without resorting to violence.\n\n**Implementation of Key Principles**\n\nGandhi implemented these principles through various means:\n\n1.  **Non-Violent Resistance**: Gandhi employed non-violent resistance in his campaigns, using civil disobedience and boycotts to challenge British rule in India. He drew inspiration from Leo Tolstoy's book \"The Kingdom of God is Within You\" and the writings of Henry David Thoreau.\n2.  **Simple Living**: Gandhi advocated for simple living and self-sufficiency. He believed that individuals should be content with minimal needs, as this would allow them to focus on more important issues.\n3.  **Economic Self-Sufficiency**: Gandhi emphasized the importance of economic self-sufficiency for India's independence. He promoted the idea of \"swadeshi\" (self-reliance) and encouraged Indians to produce their own goods rather than relying on foreign imports.\n\n**Notable Campaigns**\n\nSome notable campaigns where Gandhi implemented these principles include:\n\n*   The 1917 Champaran Satyagraha, where he fought against British exploitation in the Bihar region.\n*   The 1930 Salt March, a 24-day march to the sea to protest the British salt tax.\n*   The Quit India Movement (1942), which called for immediate independence from Britain.\n\n**Influence and Legacy**\n\nGandhi's principles have influenced civil rights movements across the world. His philosophy of non-violent resistance has inspired leaders such as Martin Luther King Jr., Nelson Mandela, and Aung San Suu Kyi.",
+          "actual": "Gandhi's Key Principles and Implementation\n\n\nMahatma Gandhi was a key figure in the Indian independence movement, known for his philosophy of non-violent resistance. His thinking on socio-secular issues was influenced by John Ruskin and Henry David Thoreau.\n\n\nEarly Life and Experiences (1869-1914)\n\n\nGandhi was born on October 2, 1869, in Porbandar, Gujarat, India. He spent his early life as a lawyer in South Africa, where he became involved in the Indian community and developed his ideas about non-violent resistance. In the 1890s, Gandhi wrote pamphlets advocating for Indian rights, which gained popularity among the Indian indentured workers.\n\n\nIndian Independence Movement (1914-1948)\n\n\nUpon returning to India in 1915, Gandhi became a leader in the Indian National Congress, advocating for independence from British colonial rule. He championed Swadeshi, or economic self-sufficiency, by promoting homespun khadi clothing and Indian-made goods. This approach aimed to promote national self-sufficiency and peaceful civil resistance against British colonialism.\n\n\nSignificant Events (1930-1947)\n\n\nGandhi's most notable events include the Salt March in 1930, where he led a procession of thousands of Indians to the coast to protest British taxation on salt production. He also advocated for non-cooperation with the British government, including boycotts and civil disobedience.\n\n\nPartition and Independence (1947)\n\n\nIn August 1947, India gained independence from British colonial rule. However, this marked the beginning of a violent partition between Hindus and Muslims, resulting in mass killings and displacement. Gandhi visited the most riot-prone areas to appeal for a stop to the massacres.\n\n\nLegacy\n\n\nGandhi's legacy is that of a champion of non-violent resistance and economic self-sufficiency. His ideas continue to inspire movements for social change around the world.\n\n\nTimeline:\n\n\n* 1869: Mahatma Gandhi born in Porbandar, Gujarat\n* 1890s: Gandhi writes pamphlets advocating for Indian rights in South Africa\n* 1915: Gandhi returns to India and becomes a leader in the Indian National Congress\n* 1930: Salt March protests British taxation on salt production\n* August 1947: India gains independence from British colonial rule",
           "metrics": {
-            "similarity_score": 0.03142857142857143,
+            "similarity_score": 0.03191903464383029,
             "rouge_scores": {
-              "rouge-1": 0.17117116839339344,
-              "rouge-2": 0.028673832669159134,
-              "rouge-l": 0.1621621593843844
+              "rouge-1": 0.12499999724210785,
+              "rouge-2": 0.024464829657062353,
+              "rouge-l": 0.107142854384965
             },
-            "keyword_score": 0.42857142857142855,
-            "total_score": 0.18979150495817246
+            "keyword_score": 0.2857142857142857,
+            "total_score": 0.13062475588730732
           },
-          "generation_time": 15.944653511047363
+          "generation_time": 8.883514642715454
         }
       ]
     }
@@ -80,10 +80,10 @@
   "overall_metrics": {
     "total_cases": 4,
     "average_scores": {
-      "similarity": 0.07049951509114195,
-      "rouge_l": 0.20121732561926067,
-      "keyword": 0.3988095238095238,
-      "total": 0.2082078608650921
+      "similarity": 0.06203697201807116,
+      "rouge_l": 0.15473398845676972,
+      "keyword": 0.5714285714285714,
+      "total": 0.2426635567728308
     }
   }
 }

@@ -1,4 +1,6 @@
+import json
 import logging
+from typing import Any
 from ollama import chat
 from core.settings import settings
 
@@ -56,3 +58,35 @@ class LLMHandler:
         except Exception as e:
             logger.error(f"Error running prompt: {e}")
             return None
+        
+    def run_prompt_with_data(self, prompt: str, data: dict | list | str) -> str:
+        """
+        Run a prompt against the LLM with additional data.
+        """
+        if not prompt or not data:
+            logger.error("Empty prompt or data provided")
+            return None
+        
+        try:
+            # Combine prompt and data into a single message
+            full_prompt = prompt
+            if data:
+                full_prompt += "\n\nData:\n" + str(data)
+
+            response = chat(
+                model=self.model,
+                messages=[
+                    {"role": "user", "content": full_prompt}
+                ]
+            )
+
+            if not response:
+                logger.warning("Empty response received from LLM")
+                return None
+
+            return response.get("message", {}).get("content")
+        
+        except Exception as e:
+            logger.error(f"Error running prompt with data: {e}")
+            return None
+            
