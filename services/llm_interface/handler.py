@@ -1,5 +1,6 @@
 import json
 import logging
+import re
 from typing import Any
 from ollama import chat
 from core.settings import settings
@@ -20,6 +21,20 @@ class LLMHandler:
             model (str): The name or identifier of the LLM model. If None, uses the model from settings.
         """
         self.model = model or settings.LLM_MODEL
+
+    def _remove_think_tags(self, text: str) -> str:
+        """
+        Remove <think> tags and their contents from the text.
+        
+        Args:
+            text (str): The text to process
+            
+        Returns:
+            str: Text with think tags removed
+        """
+        if not text:
+            return text
+        return re.sub(r'<think>.*?</think>', '', text, flags=re.DOTALL)
 
     def run_prompt(self, prompt: str, **kwargs : dict) -> str:
         """
@@ -53,7 +68,8 @@ class LLMHandler:
                 logger.warning("Empty response received from LLM")
                 return None
 
-            return response.get("message", {}).get("content")
+            content = response.get("message", {}).get("content")
+            return self._remove_think_tags(content)
 
         except Exception as e:
             logger.error(f"Error running prompt: {e}")
@@ -84,7 +100,8 @@ class LLMHandler:
                 logger.warning("Empty response received from LLM")
                 return None
 
-            return response.get("message", {}).get("content")
+            content = response.get("message", {}).get("content")
+            return self._remove_think_tags(content)
         
         except Exception as e:
             logger.error(f"Error running prompt with data: {e}")

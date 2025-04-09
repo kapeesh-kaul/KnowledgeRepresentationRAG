@@ -5,14 +5,19 @@
             "description": "Test cases about Gandhi's early life and education",
             "test_cases": [
                 {
-                    "prompt": "Where and when was Mahatma Gandhi born, and what was his early education like?",
-                    "expected_answer": "Mahatma Gandhi was born on October 2, 1869, in Porbandar, Gujarat, India. He studied law in London at the Inner Temple and was called to the bar in 1891. His early education in India was at local schools in Porbandar and Rajkot.",
-                    "keywords": ["October 2, 1869", "Porbandar", "Gujarat", "law", "London", "Inner Temple"]
+                    "prompt": "Where and when was Mahatma Gandhi born?",
+                    "expected_answer": "Mahatma Gandhi was born on October 2, 1869, in Porbandar, Gujarat, India.",
+                    "keywords": ["October 2, 1869", "Porbandar", "Gujarat"]
                 },
                 {
-                    "prompt": "What was Gandhi's experience in South Africa and how did it influence him?",
-                    "expected_answer": "Gandhi spent 21 years in South Africa (1893-1914) where he developed his political views and philosophy of nonviolent resistance. He faced racial discrimination which led him to fight for civil rights, developing the concept of Satyagraha (truth-force) and becoming a leader in the Indian community's struggle against injustice.",
-                    "keywords": ["South Africa", "21 years", "nonviolent resistance", "Satyagraha", "civil rights", "racial discrimination"]
+                    "prompt": "Where did Gandhi study law?",
+                    "expected_answer": "Gandhi studied law in London at the Inner Temple.",
+                    "keywords": ["law", "London", "Inner Temple"]
+                },
+                {
+                    "prompt": "How long did Gandhi stay in South Africa?",
+                    "expected_answer": "Gandhi stayed in South Africa for 21 years, from 1893 to 1914.",
+                    "keywords": ["South Africa", "21 years", "1893-1914"]
                 }
             ]
         },
@@ -21,14 +26,114 @@
             "description": "Test cases about Gandhi's role in India's independence movement",
             "test_cases": [
                 {
-                    "prompt": "What were some of Gandhi's major campaigns during the Indian independence movement?",
-                    "expected_answer": "Gandhi led several major campaigns including the Non-Cooperation Movement (1920-22), the Salt March (1930), and the Quit India Movement (1942). He advocated for nonviolent civil disobedience, promoted self-reliance through the spinning wheel (charkha), and worked to unite Hindus and Muslims in the independence struggle.",
-                    "keywords": ["Non-Cooperation Movement", "Salt March", "Quit India Movement", "civil disobedience", "charkha", "Hindus and Muslims"]
+                    "prompt": "What was the Salt March?",
+                    "expected_answer": "The Salt March was a peaceful protest led by Gandhi in 1930 against the British salt tax. He walked 240 miles to the sea to make salt.",
+                    "keywords": ["Salt March", "1930", "salt tax", "peaceful protest"]
                 },
                 {
-                    "prompt": "What were Gandhi's key principles and how did he implement them?",
-                    "expected_answer": "Gandhi's key principles included Ahimsa (non-violence), Satyagraha (truth-force), and Swaraj (self-rule). He implemented these through peaceful protests, fasting, and civil disobedience. He promoted simple living, wearing homespun khadi cloth, and advocated for the upliftment of the untouchables (whom he called Harijans).",
-                    "keywords": ["Ahimsa", "Satyagraha", "Swaraj", "non-violence", "khadi", "Harijans", "civil disobedience"]
+                    "prompt": "What was the Quit India Movement?",
+                    "expected_answer": "The Quit India Movement was a major campaign started by Gandhi in 1942 demanding immediate independence for India from British rule.",
+                    "keywords": ["Quit India Movement", "1942", "independence", "British rule"]
+                },
+                {
+                    "prompt": "What was Gandhi's main method of protest?",
+                    "expected_answer": "Gandhi's main method of protest was nonviolent resistance and civil disobedience.",
+                    "keywords": ["nonviolent resistance", "civil disobedience", "protest"]
+                }
+            ]
+        },
+        {
+            "name": "gandhi_philosophy",
+            "description": "Test cases about Gandhi's philosophical beliefs and principles",
+            "test_cases": [
+                {
+                    "prompt": "What does 'Satyagraha' mean?",
+                    "expected_answer": "Satyagraha means 'truth force' or 'soul force' and was Gandhi's method of nonviolent resistance.",
+                    "keywords": ["Satyagraha", "truth force", "nonviolent resistance"]
+                },
+                {
+                    "prompt": "What was Gandhi's view on violence?",
+                    "expected_answer": "Gandhi strongly believed in non-violence (Ahimsa) and peaceful methods of protest.",
+                    "keywords": ["non-violence", "Ahimsa", "peaceful"]
+                },
+                {
+                    "prompt": "What did Gandhi mean by 'Swaraj'?",
+                    "expected_answer": "Swaraj means self-rule or self-governance, which was Gandhi's vision for India's independence.",
+                    "keywords": ["Swaraj", "self-rule", "self-governance"]
+                }
+            ]
+        },
+        {
+            "name": "gandhi_personal_life",
+            "description": "Test cases about Gandhi's personal life and habits",
+            "test_cases": [
+                {
+                    "prompt": "What was Gandhi's daily routine?",
+                    "expected_answer": "Gandhi's daily routine included prayer, spinning on the charkha, walking, and maintaining a simple vegetarian diet.",
+                    "keywords": ["prayer", "charkha", "walking", "vegetarian"]
+                },
+                {
+                    "prompt": "What was Gandhi's diet?",
+                    "expected_answer": "Gandhi was a strict vegetarian and often fasted as part of his spiritual practice.",
+                    "keywords": ["vegetarian", "fasting", "diet"]
+                },
+                {
+                    "prompt": "What was Gandhi's favorite book?",
+                    "expected_answer": "Gandhi's favorite book was the Bhagavad Gita, which greatly influenced his philosophy.",
+                    "keywords": ["Bhagavad Gita", "book", "philosophy"]
+                }
+            ]
+        },
+        {
+            "name": "gandhi_legacy",
+            "description": "Test cases about Gandhi's impact and legacy",
+            "test_cases": [
+                {
+                    "prompt": "Who was influenced by Gandhi's nonviolence?",
+                    "expected_answer": "Martin Luther King Jr. was greatly influenced by Gandhi's philosophy of nonviolence.",
+                    "keywords": ["Martin Luther King Jr.", "nonviolence", "influence"]
+                },
+                {
+                    "prompt": "What is Gandhi's birthday celebrated as?",
+                    "expected_answer": "Gandhi's birthday, October 2, is celebrated as the International Day of Non-Violence.",
+                    "keywords": ["October 2", "International Day of Non-Violence", "birthday"]
+                },
+                {
+                    "prompt": "What did Gandhi say about change?",
+                    "expected_answer": "Gandhi famously said, 'Be the change you wish to see in the world.'",
+                    "keywords": ["change", "quote", "world"]
+                }
+            ]
+        },
+        {
+            "name": "gandhi_education",
+            "description": "Test cases about Gandhi's views on education",
+            "test_cases": [
+                {
+                    "prompt": "What was Gandhi's education system called?",
+                    "expected_answer": "Gandhi's education system was called 'Nai Talim' or Basic Education.",
+                    "keywords": ["Nai Talim", "Basic Education", "education system"]
+                },
+                {
+                    "prompt": "What did Gandhi think about manual work?",
+                    "expected_answer": "Gandhi believed that manual work and education should go together.",
+                    "keywords": ["manual work", "education", "together"]
+                }
+            ]
+        },
+        {
+            "name": "gandhi_environment",
+            "description": "Test cases about Gandhi's environmental views",
+            "test_cases": [
+                {
+                    "prompt": "What was Gandhi's famous quote about needs and greed?",
+                    "expected_answer": "Gandhi said, 'The world has enough for everyone's need, but not enough for everyone's greed.'",
+                    "keywords": ["world", "need", "greed", "quote"]
+                },
+                {
+                    "prompt": "What did Gandhi promote for sustainable living?",
+                    "expected_answer": "Gandhi promoted simple living, minimal consumption, and self-sufficiency.",
+                    "keywords": ["simple living", "minimal consumption", "self-sufficiency"]
                 }
             ]
         }

@@ -1,0 +1,359 @@
+{
+  "categories": [
+    {
+      "name": "gandhi_early_life",
+      "description": "Test cases about Gandhi's early life and education",
+      "test_cases": [
+        {
+          "prompt": "Where and when was Mahatma Gandhi born?",
+          "expected": "Mahatma Gandhi was born on October 2, 1869, in Porbandar, Gujarat, India.",
+          "actual": "Mahatma Gandhi was born on October 2, 1869, in Porbandar (also known as Sudamapuri), a coastal town on the Kathiawar Peninsula and then part of the small princely state of Porbandar in the Kathiawar Agency of the British Raj.",
+          "metrics": {
+            "similarity_score": 0.44966442953020136,
+            "rouge_scores": {
+              "rouge-1": 0.4285714244897959,
+              "rouge-2": 0.34042552832956086,
+              "rouge-l": 0.4285714244897959
+            },
+            "keyword_score": 0.6666666666666666,
+            "total_score": 0.5084371991590193
+          },
+          "generation_time": 22.72236180305481
+        },
+        {
+          "prompt": "Where did Gandhi study law?",
+          "expected": "Gandhi studied law in London at the Inner Temple.",
+          "actual": "Mahatma Gandhi studied law at University College, London, where he took classes in English literature with Henry Morley from 1888\u20131889.",
+          "metrics": {
+            "similarity_score": 0.44565217391304346,
+            "rouge_scores": {
+              "rouge-1": 0.34482758192627827,
+              "rouge-2": 0.14814814397805223,
+              "rouge-l": 0.275862064684899
+            },
+            "keyword_score": 0.6666666666666666,
+            "total_score": 0.461019488970687
+          },
+          "generation_time": 0.9643146991729736
+        },
+        {
+          "prompt": "How long did Gandhi stay in South Africa?",
+          "expected": "Gandhi stayed in South Africa for 21 years, from 1893 to 1914.",
+          "actual": "Gandhi stayed in South Africa for approximately 21 years (1893-1914), initially planning to stay for a shorter period but extending his stay due to his involvement in the resistance against discriminatory policies and proposals.",
+          "metrics": {
+            "similarity_score": 0.3586206896551724,
+            "rouge_scores": {
+              "rouge-1": 0.3902438982986318,
+              "rouge-2": 0.22727272352272732,
+              "rouge-l": 0.3902438982986318
+            },
+            "keyword_score": 1.0,
+            "total_score": 0.5605214453516585
+          },
+          "generation_time": 1.1954412460327148
+        }
+      ]
+    },
+    {
+      "name": "gandhi_independence_movement",
+      "description": "Test cases about Gandhi's role in India's independence movement",
+      "test_cases": [
+        {
+          "prompt": "What was the Salt March?",
+          "expected": "The Salt March was a peaceful protest led by Gandhi in 1930 against the British salt tax. He walked 240 miles to the sea to make salt.",
+          "actual": "The Salt March was a 388-kilometer march from Ahmedabad to Dandi, Gujarat, led by Mahatma Gandhi from 12 March to 6 April 1930, as part of his non-violent civil disobedience movement against the British salt tax.",
+          "metrics": {
+            "similarity_score": 0.44508670520231214,
+            "rouge_scores": {
+              "rouge-1": 0.49122806530009244,
+              "rouge-2": 0.2950819623219565,
+              "rouge-l": 0.49122806530009244
+            },
+            "keyword_score": 0.75,
+            "total_score": 0.5504031016709525
+          },
+          "generation_time": 1.431122064590454
+        },
+        {
+          "prompt": "What was the Quit India Movement?",
+          "expected": "The Quit India Movement was a major campaign started by Gandhi in 1942 demanding immediate independence for India from British rule.",
+          "actual": "The Quit India Movement was a major revolt in India against British rule in 1942, led by Mahatma Gandhi, which called for the immediate transfer of power to the Indian people and was marked by widespread civil disobedience, including attacks on government properties and the arrest of Gandhi and other Congress leaders.",
+          "metrics": {
+            "similarity_score": 0.2749445676274945,
+            "rouge_scores": {
+              "rouge-1": 0.4444444401108593,
+              "rouge-2": 0.1971830945447333,
+              "rouge-l": 0.31746031312673223
+            },
+            "keyword_score": 0.75,
+            "total_score": 0.43021592098901745
+          },
+          "generation_time": 1.5471837520599365
+        },
+        {
+          "prompt": "What was Gandhi's main method of protest?",
+          "expected": "Gandhi's main method of protest was nonviolent resistance and civil disobedience.",
+          "actual": "Gandhi's main method of protest was non-cooperation, which included boycotts of foreign-made goods, especially British products, and advocating for the use of homespun cloth instead, as evident in his advocacy for Swadeshi and khadi clothing.",
+          "metrics": {
+            "similarity_score": 0.38390092879256965,
+            "rouge_scores": {
+              "rouge-1": 0.3333333294671202,
+              "rouge-2": 0.2272727237603306,
+              "rouge-l": 0.3333333294671202
+            },
+            "keyword_score": 0.3333333333333333,
+            "total_score": 0.3535603703571639
+          },
+          "generation_time": 1.374037265777588
+        }
+      ]
+    },
+    {
+      "name": "gandhi_philosophy",
+      "description": "Test cases about Gandhi's philosophical beliefs and principles",
+      "test_cases": [
+        {
+          "prompt": "What does 'Satyagraha' mean?",
+          "expected": "Satyagraha means 'truth force' or 'soul force' and was Gandhi's method of nonviolent resistance.",
+          "actual": "The term \"Satyagraha\" refers to a political and philosophical movement introduced by Mahatma Gandhi in 1920 as a means of non-violent resistance to British rule in India, characterized by an insistence on the truth or Satya.",
+          "metrics": {
+            "similarity_score": 0.4,
+            "rouge_scores": {
+              "rouge-1": 0.2222222181135803,
+              "rouge-2": 0.0,
+              "rouge-l": 0.1333333292246915
+            },
+            "keyword_score": 0.3333333333333333,
+            "total_score": 0.29999999876740746
+          },
+          "generation_time": 1.2779853343963623
+        },
+        {
+          "prompt": "What was Gandhi's view on violence?",
+          "expected": "Gandhi strongly believed in non-violence (Ahimsa) and peaceful methods of protest.",
+          "actual": "Gandhi believed in non-violence and considered violence to be a counterproductive method of achieving social change, instead advocating for economic self-sufficiency and peaceful civil resistance as a means of promoting national independence from British colonialism.",
+          "metrics": {
+            "similarity_score": 0.3667621776504298,
+            "rouge_scores": {
+              "rouge-1": 0.3255813915413737,
+              "rouge-2": 0.13636363285123976,
+              "rouge-l": 0.3255813915413737
+            },
+            "keyword_score": 0.6666666666666666,
+            "total_score": 0.444379288522584
+          },
+          "generation_time": 1.2835197448730469
+        },
+        {
+          "prompt": "What did Gandhi mean by 'Swaraj'?",
+          "expected": "Swaraj means self-rule or self-governance, which was Gandhi's vision for India's independence.",
+          "actual": "Gandhi's concept of \"Swaraj\" referred to self-governance and democracy, where individuals and communities are self-sufficient and responsible for their own well-being, rather than relying on a higher authority or external power.\n\nPlease note that the information provided is based on the query results from the knowledge graph, which include various texts and sources related to Gandhi's thoughts on Swaraj.",
+          "metrics": {
+            "similarity_score": 0.20758483033932135,
+            "rouge_scores": {
+              "rouge-1": 0.16129031945889702,
+              "rouge-2": 0.0,
+              "rouge-l": 0.09677419042663901
+            },
+            "keyword_score": 0.6666666666666666,
+            "total_score": 0.3120661892637202
+          },
+          "generation_time": 1.9302864074707031
+        }
+      ]
+    },
+    {
+      "name": "gandhi_personal_life",
+      "description": "Test cases about Gandhi's personal life and habits",
+      "test_cases": [
+        {
+          "prompt": "What was Gandhi's daily routine?",
+          "expected": "Gandhi's daily routine included prayer, spinning on the charkha, walking, and maintaining a simple vegetarian diet.",
+          "actual": "Gandhi's daily routine varied throughout his life, but generally consisted of a simple vegetarian diet, meditation and self-reflection in the morning, followed by community service, public speaking, and writing pamphlets or advocating for Indian rights and freedoms from the late 1890s to the mid-1940s, before ultimately leading to his assassination in 1948.",
+          "metrics": {
+            "similarity_score": 0.2742616033755274,
+            "rouge_scores": {
+              "rouge-1": 0.2622950780972857,
+              "rouge-2": 0.12121211769972462,
+              "rouge-l": 0.19672130760548248
+            },
+            "keyword_score": 0.25,
+            "total_score": 0.2437210336318557
+          },
+          "generation_time": 1.7202932834625244
+        },
+        {
+          "prompt": "What was Gandhi's diet?",
+          "expected": "Gandhi was a strict vegetarian and often fasted as part of his spiritual practice.",
+          "actual": "Here is the answer to the user's question based on the provided results:\n\n\nMahatma Gandhi's diet primarily consisted of Indian and vegetarian foods, with some sources mentioning his consumption of fruits, nuts, and dairy products, although specific details about his daily food intake are not explicitly stated in the results.",
+          "metrics": {
+            "similarity_score": 0.2647058823529412,
+            "rouge_scores": {
+              "rouge-1": 0.13793103082045194,
+              "rouge-2": 0.0,
+              "rouge-l": 0.10344827219976233
+            },
+            "keyword_score": 0.6666666666666666,
+            "total_score": 0.33691683460110516
+          },
+          "generation_time": 1.4378209114074707
+        },
+        {
+          "prompt": "What was Gandhi's favorite book?",
+          "expected": "Gandhi's favorite book was the Bhagavad Gita, which greatly influenced his philosophy.",
+          "actual": "Gandhi's favorite book was \"The Story of My Experiments with Truth,\" which he bought the entire first edition to ensure its reprinting after writing it in Gujarati.\n\nNote: The source material only mentions Gandhi buying the first edition of his autobiography, but does not explicitly state it as his favorite book. However, based on the context and information provided, \"The Story of My Experiments with Truth\" is widely recognized as one of Gandhi's most notable writings and a significant work in his literary career.",
+          "metrics": {
+            "similarity_score": 0.2145214521452145,
+            "rouge_scores": {
+              "rouge-1": 0.18666666397866669,
+              "rouge-2": 0.06896551503236895,
+              "rouge-l": 0.18666666397866669
+            },
+            "keyword_score": 0.3333333333333333,
+            "total_score": 0.24180858005168582
+          },
+          "generation_time": 2.387237071990967
+        }
+      ]
+    },
+    {
+      "name": "gandhi_legacy",
+      "description": "Test cases about Gandhi's impact and legacy",
+      "test_cases": [
+        {
+          "prompt": "Who was influenced by Gandhi's nonviolence?",
+          "expected": "Martin Luther King Jr. was greatly influenced by Gandhi's philosophy of nonviolence.",
+          "actual": "Based on the provided results from the knowledge graph, Gandhi's nonviolent philosophy influenced a diverse range of individuals and movements across the world, including Farah Omar, Lanza del Vasto, Madeleine Slade (Mirabehn), John Lennon, Al Gore, Martin Luther King Jr., Nelson Mandela, Steve Biko, V\u00e1clav Havel, Aung San Suu Kyi, and others, with key events and influences spanning from Gandhi's early adoption of Satyagraha in 1906 to the present day.",
+          "metrics": {
+            "similarity_score": 0.2222222222222222,
+            "rouge_scores": {
+              "rouge-1": 0.21333333064533336,
+              "rouge-2": 0.07407407172687097,
+              "rouge-l": 0.18666666397866669
+            },
+            "keyword_score": 0.6666666666666666,
+            "total_score": 0.34488888808248885
+          },
+          "generation_time": 2.4523916244506836
+        },
+        {
+          "prompt": "What is Gandhi's birthday celebrated as?",
+          "expected": "Gandhi's birthday, October 2, is celebrated as the International Day of Non-Violence.",
+          "actual": "Gandhi's birthday, October 2nd, is celebrated as the International Day of Nonviolence worldwide, while his date of death, January 30th, is commemorated as Martyrs' Day in India.",
+          "metrics": {
+            "similarity_score": 0.6412213740458015,
+            "rouge_scores": {
+              "rouge-1": 0.571428566922449,
+              "rouge-2": 0.43243242825420025,
+              "rouge-l": 0.571428566922449
+            },
+            "keyword_score": 0.6666666666666666,
+            "total_score": 0.6279171196950553
+          },
+          "generation_time": 1.261129379272461
+        },
+        {
+          "prompt": "What did Gandhi say about change?",
+          "expected": "Gandhi famously said, 'Be the change you wish to see in the world.'",
+          "actual": "Here is the answer to your question based on the provided knowledge graph results:\n\nMahatma Gandhi emphasized the importance of nonviolence as a means of achieving social change and was willing to sacrifice his own interests for the greater good, exemplified by his actions during the Indian independence movement against British rule.",
+          "metrics": {
+            "similarity_score": 0.19900497512437812,
+            "rouge_scores": {
+              "rouge-1": 0.13793103100475634,
+              "rouge-2": 0.0,
+              "rouge-l": 0.13793103100475634
+            },
+            "keyword_score": 0.3333333333333333,
+            "total_score": 0.22098129935117816
+          },
+          "generation_time": 1.5535905361175537
+        }
+      ]
+    },
+    {
+      "name": "gandhi_education",
+      "description": "Test cases about Gandhi's views on education",
+      "test_cases": [
+        {
+          "prompt": "What was Gandhi's education system called?",
+          "expected": "Gandhi's education system was called 'Nai Talim' or Basic Education.",
+          "actual": "Gandhi's education system was largely self-directed and influenced by his exposure to Gujarati literature and reformers like Narmad and Govardhanram Tripathi, with no formal degree-granting institution until he enrolled at Samaldas College in 1915.",
+          "metrics": {
+            "similarity_score": 0.25949367088607594,
+            "rouge_scores": {
+              "rouge-1": 0.1904761868480726,
+              "rouge-2": 0.14285713948979603,
+              "rouge-l": 0.1904761868480726
+            },
+            "keyword_score": 0.3333333333333333,
+            "total_score": 0.2609403244088521
+          },
+          "generation_time": 1.4419827461242676
+        },
+        {
+          "prompt": "What did Gandhi think about manual work?",
+          "expected": "Gandhi believed that manual work and education should go together.",
+          "actual": "Gandhi believed that manual work was essential to a fulfilling life and that it should be valued equally with other forms of work, such as law or barbering, for the purpose of earning one's livelihood.",
+          "metrics": {
+            "similarity_score": 0.4044943820224719,
+            "rouge_scores": {
+              "rouge-1": 0.3255813917793402,
+              "rouge-2": 0.18604650831800976,
+              "rouge-l": 0.3255813917793402
+            },
+            "keyword_score": 0.3333333333333333,
+            "total_score": 0.35947217034279083
+          },
+          "generation_time": 1.1997873783111572
+        }
+      ]
+    },
+    {
+      "name": "gandhi_environment",
+      "description": "Test cases about Gandhi's environmental views",
+      "test_cases": [
+        {
+          "prompt": "What was Gandhi's famous quote about needs and greed?",
+          "expected": "Gandhi said, 'The world has enough for everyone's need, but not enough for everyone's greed.'",
+          "actual": "The famous quote about needs and greed attributed to Gandhi is not explicitly mentioned in the provided results, but his ideas about winning \"hate with love\" and promoting nonviolent methods for conflict resolution, as expressed in his pamphlets from the 1890s, reflect his philosophy of addressing human needs and desires while also advocating for morality and self-rule.",
+          "metrics": {
+            "similarity_score": 0.15053763440860216,
+            "rouge_scores": {
+              "rouge-1": 0.1666666632722223,
+              "rouge-2": 0.0,
+              "rouge-l": 0.09999999660555567
+            },
+            "keyword_score": 0.75,
+            "total_score": 0.3152150527451075
+          },
+          "generation_time": 1.6582894325256348
+        },
+        {
+          "prompt": "What did Gandhi promote for sustainable living?",
+          "expected": "Gandhi promoted simple living, minimal consumption, and self-sufficiency.",
+          "actual": "Gandhi promoted sustainable living through his advocacy for economic self-sufficiency, championing of Swadeshi and non-cooperation against European colonialism, and the development of homespun khadi clothing and Indian-made goods, which aimed to incorporate peaceful civil resistance as a means of promoting national self-sufficiency.",
+          "metrics": {
+            "similarity_score": 0.3095823095823096,
+            "rouge_scores": {
+              "rouge-1": 0.17391304060491497,
+              "rouge-2": 0.041666664175347375,
+              "rouge-l": 0.17391304060491497
+            },
+            "keyword_score": 0.3333333333333333,
+            "total_score": 0.2760068360143983
+          },
+          "generation_time": 1.6007192134857178
+        }
+      ]
+    }
+  ],
+  "overall_metrics": {
+    "total_cases": 19,
+    "average_scores": {
+      "similarity": 0.3301190530987415,
+      "rouge_l": 0.26132742779408646,
+      "keyword": 0.5526315789473685,
+      "total": 0.37623532326193304
+    }
+  }
+}

@@ -1,0 +1,359 @@
+{
+  "categories": [
+    {
+      "name": "gandhi_early_life",
+      "description": "Test cases about Gandhi's early life and education",
+      "test_cases": [
+        {
+          "prompt": "Where and when was Mahatma Gandhi born?",
+          "expected": "Mahatma Gandhi was born on October 2, 1869, in Porbandar, Gujarat, India.",
+          "actual": "Mahatma Gandhi played a monumental role in shaping the post-independence India through both his political leadership and his enduring influence. Here's an organized summary of his contributions and impact:\n\n1. **Political Leadership**: \n   - Gandhi served as the first President,\u603b\u7406, and Prime Minister after India gained independence, guiding the nation through significant transitions.\n   - His leadership during partition was celebrated for its progressive vision but also marked by the divisive consequences of British rule.\n\n2. **Electoral Success**:\n   - During his tenure at the Indian Parliament, she was re-elected three times, achieving a third consecutive Lok Sabha term in 2006 and winning the 2013 presidential elections consecutively.\n   - Her leadership helped the Congress Party secure the highest number of Lok Sabha seats since 1991.\n\n3. **Cultural and Political Influence**:\n   - Gandhi's political principles, particularly non-violence, continue to resonate globally through international resolutions and pop culture references.\n   - He is celebrated in India as a symbol of tolerance and secular democracy, observed through national holidays and cultural landmarks like temples dedicated to him.\n\n4. **International Impact**:\n   - The United Nations honors his birthday with a resolution promoting non-violence, underscoring the global relevance of his ideas.\n   - His influence extends beyond India into international relations and human rights advocacy, as seen in his condemnation of legal sections opposing LGBTQ+ rights.\n\n5. **Legacy and Relevance**:\n   - Despite modern changes, Gandhi's legacy remains influential due to his commitment to non-violence and progressive policies.\n   - His ideas continue to inspire change globally, particularly through literature, film, and international organizations.\n\nIn conclusion, Mahatma Gandhi was a pivotal figure whose impact on Indian politics, culture, and global influence is unparalleled. His emphasis on non-violence and tolerance remains a timeless legacy, shaping contemporary discussions on social justice and governance.",
+          "metrics": {
+            "similarity_score": 0.02857142857142857,
+            "rouge_scores": {
+              "rouge-1": 0.059113299380232485,
+              "rouge-2": 0.013698629411944116,
+              "rouge-l": 0.059113299380232485
+            },
+            "keyword_score": 0.0,
+            "total_score": 0.029162561242641175
+          },
+          "generation_time": 26.95854425430298
+        },
+        {
+          "prompt": "Where did Gandhi study law?",
+          "expected": "Gandhi studied law in London at the Inner Temple.",
+          "actual": "The provided results do not contain information about where Gandhi studied law.",
+          "metrics": {
+            "similarity_score": 0.296875,
+            "rouge_scores": {
+              "rouge-1": 0.2857142808163266,
+              "rouge-2": 0.21052631091412755,
+              "rouge-l": 0.2857142808163266
+            },
+            "keyword_score": 0.3333333333333333,
+            "total_score": 0.30446428424489796
+          },
+          "generation_time": 51.51332116127014
+        },
+        {
+          "prompt": "How long did Gandhi stay in South Africa?",
+          "expected": "Gandhi stayed in South Africa for 21 years, from 1893 to 1914.",
+          "actual": "Gandhi spent approximately 26 days visiting South Africa during his tours of British India from October 31 to November 25, 1947-1948. This included two visits: around October 30\u2013November 2 and another around December 1\u201310, totaling about 26 days across these instances.",
+          "metrics": {
+            "similarity_score": 0.29003021148036257,
+            "rouge_scores": {
+              "rouge-1": 0.20408162895460233,
+              "rouge-2": 0.039999996568000296,
+              "rouge-l": 0.20408162895460233
+            },
+            "keyword_score": 0.3333333333333333,
+            "total_score": 0.2772365732785257
+          },
+          "generation_time": 21.433823823928833
+        }
+      ]
+    },
+    {
+      "name": "gandhi_independence_movement",
+      "description": "Test cases about Gandhi's role in India's independence movement",
+      "test_cases": [
+        {
+          "prompt": "What was the Salt March?",
+          "expected": "The Salt March was a peaceful protest led by Gandhi in 1930 against the British salt tax. He walked 240 miles to the sea to make salt.",
+          "actual": "The Salt March was an unauthorized march organized by students and trade unionists in Chile during 1973 as part of the Contra-revoluci\u00f3n movement. They protested against government-imposed land redistribution due to nationalization efforts, symbolizing their defiance of official procedures. This event highlighted significant tensions between the government and the people, contributing to its recognition in historical analyses of Chilean political dynamics post-land reform.",
+          "metrics": {
+            "similarity_score": 0.23567921440261866,
+            "rouge_scores": {
+              "rouge-1": 0.2249999958000001,
+              "rouge-2": 0.0681818140185953,
+              "rouge-l": 0.2249999958000001
+            },
+            "keyword_score": 0.25,
+            "total_score": 0.23677168450104752
+          },
+          "generation_time": 11.28089690208435
+        },
+        {
+          "prompt": "What was the Quit India Movement?",
+          "expected": "The Quit India Movement was a major campaign started by Gandhi in 1942 demanding immediate independence for India from British rule.",
+          "actual": "The Quit India Movement was a significant political movement during World War II led by Mahatma Gandhi. It began in 1942 when Gandhi called for British Indians to abandon British support in the war and demand Indian independence, marking the most definitive revolt against British rule.\n\nGandhi's opposition to Indian participation in World War II stemmed from his belief that India should not be part of a war to secure democratic freedom while denying this freedom to its own people. His 1942 speech in Mumbai solidified the movement, leading to arrests of Congress leaders and violent retaliations against British officials.\n\nGandhi was imprisoned for two years until his release in 1944 due to health issues. During his tenure, his longtime secretary Mahadev Desai died of a heart attack, and his wife Kasturba suffered from malaria after 18 months of imprisonment. Despite facing immense pressure, Gandhi agreed to an interview with British journalist Stuart Gelder, whose release distorted the truth about the movement.\n\nThe movement ultimately resulted in the withdrawal of Gandhi's demands but led to political shifts as Congress leaders were released post-war, including Jinnah advocating for partition and a separate Muslim homeland, though this did not align fully with Gandhi's vision.",
+          "metrics": {
+            "similarity_score": 0.14135759272218335,
+            "rouge_scores": {
+              "rouge-1": 0.17721518766223365,
+              "rouge-2": 0.06511627738236889,
+              "rouge-l": 0.17721518766223365
+            },
+            "keyword_score": 1.0,
+            "total_score": 0.4097075933875434
+          },
+          "generation_time": 16.271506786346436
+        },
+        {
+          "prompt": "What was Gandhi's main method of protest?",
+          "expected": "Gandhi's main method of protest was nonviolent resistance and civil disobedience.",
+          "actual": "Gandhi primarily used nonviolent methods of protest, such as fasts and marches, in his efforts against government policies. However, without specific sources or context from the query results, I cannot provide exact details or instances where he employed these methods. For precise information, please refer to reliable historical records or sources detailing Gandhi's activities over time.",
+          "metrics": {
+            "similarity_score": 0.19532908704883228,
+            "rouge_scores": {
+              "rouge-1": 0.12698412410178894,
+              "rouge-2": 0.0,
+              "rouge-l": 0.0952380923557572
+            },
+            "keyword_score": 0.3333333333333333,
+            "total_score": 0.20670306252626008
+          },
+          "generation_time": 9.401406526565552
+        }
+      ]
+    },
+    {
+      "name": "gandhi_philosophy",
+      "description": "Test cases about Gandhi's philosophical beliefs and principles",
+      "test_cases": [
+        {
+          "prompt": "What does 'Satyagraha' mean?",
+          "expected": "Satyagraha means 'truth force' or 'soul force' and was Gandhi's method of nonviolent resistance.",
+          "actual": "**Mahatma Gandhi: A Comprehensive Overview**\n\n**Introduction**\nMahatma Gandhi (1869\u20131948) was one of the most influential political leaders in modern history, renowned for his leadership during India's freedom movement. Known as \"The Prince of Pepper,\" he played a pivotal role in shaping India's independence and became a global symbol of non-violence.\n\n**Biographical Overview**\nBorn into a royal Maratha family in Porbandar, Gujarat, on March 2, 1869, Gandhi was raised by his father, who imparted deep spiritual values. He grew up in a community influenced by philosophy and religion, preparing him for leadership roles throughout his life.\n\n**Early Life and Education**\nGandhi's intellectual journey began early, driven by curiosity and exposure to philosophical texts like Spinoza and Hegel. At 14, he was immersed in the works of R.G. Cavalier, further fueled by his father's teachings on truth and equality.\n\n**Political Career**\nGandhi emerged as a key figure in India's freedom movement, advocating for non-violent resistance against British rule. His leadership culminated in the Salt March of 1942, a pivotal event marking the end of British governance.\n\n**Family Life**\nMarried to Nivedita Phule, Gandhi became an advocate for caste equality and women's rights. The couple had no children, a choice that reflected his commitment to principles rather than family structure.\n\n**Principles of Gandhi**\nGandhi's core values included truth, non-violence, equality, and sanskriti (divine essence). He championed civil disobedience, asserting that moral integrity justified resistance against oppression.\n\n**Notable Quotations and Impact**\nGandhi's iconic quotes, such as \"Nonviolent Power\" and \"The arc of the moral universe is long but it bends toward justice,\" have profoundly influenced global leaders and movements. His ideas continue to inspire actions for equality and human rights.\n\n**Family Life**\nBeyond his marriage, Gandhi focused on social justice, advocating for caste integration in India. His efforts significantly impacted post-independence India.\n\n**Philosophical and Religious Views**\nGandhi rejected organized religion, instead drawing from secular philosophies like Buddhism and Hinduism to guide his actions, emphasizing moral integrity over dogma.\n\n**Film and Pop Culture**\nGandhi's life has been adapted into various media, including a 1982 film featuring Ben Kingsley as him. These adaptations highlight his legacy through compelling narratives of struggle and hope.\n\n**Literature**\nGandhi's works, such as \"The SubalternVoice\" and \"Peace\", explore themes of identity, oppression, and justice, resonating with global readers seeking meaning in social contexts.\n\n**Legacy**\nGandhi's impact extends beyond India, shaping movements for civil rights, environmental sustainability, and global justice. His non-violent philosophy remains a beacon of hope and moral courage.\n\nIn summary, Mahatma Gandhi's multifaceted contributions have left an indelible mark on history, serving as a testament to the power of individual action and moral principles in achieving social change.",
+          "metrics": {
+            "similarity_score": 0.033156083828589304,
+            "rouge_scores": {
+              "rouge-1": 0.03367003283293091,
+              "rouge-2": 0.0,
+              "rouge-l": 0.03367003283293091
+            },
+            "keyword_score": 0.0,
+            "total_score": 0.023363443381314995
+          },
+          "generation_time": 38.64451766014099
+        },
+        {
+          "prompt": "What was Gandhi's view on violence?",
+          "expected": "Gandhi strongly believed in non-violence (Ahimsa) and peaceful methods of protest.",
+          "actual": "The data provided describes Mahatma Gandhi, a pivotal figure in Indian history. Known for his leadership during India's independence movement, Gandhi was involved in education reform and nonviolent resistance, famously encapsulated by his Salt March of 1942. His governance experience included administrative roles in regions like Porbandar and Rajkot under British colonial rule. Additionally, he was part of a Brahmin family and received significant honors such as the Nobel Peace Prize and Padma Bhushan. His legacy includes the Salt March, which led to the 1948 protests and the 1950 Nobel Peace Prize for his peacemaking efforts.",
+          "metrics": {
+            "similarity_score": 0.1564245810055866,
+            "rouge_scores": {
+              "rouge-1": 0.09195402077949535,
+              "rouge-2": 0.0,
+              "rouge-l": 0.09195402077949535
+            },
+            "keyword_score": 0.0,
+            "total_score": 0.09015603863608325
+          },
+          "generation_time": 89.28177785873413
+        },
+        {
+          "prompt": "What did Gandhi mean by 'Swaraj'?",
+          "expected": "Swaraj means self-rule or self-governance, which was Gandhi's vision for India's independence.",
+          "actual": "Gandhi's concept of \"Swaraj\" refers to self-rule that emphasizes equity, justice, and prosperity. It involves governance by representatives from different social classes, ensuring fair distribution of power and promoting an equitable society post-independence.\n\n**Answer:**  \n\"Swaraj\" represents Gandhi's vision of a self-governed, just, and prosperous society where representatives from all social strata rule together to achieve fairness and equality in India.",
+          "metrics": {
+            "similarity_score": 0.23741007194244604,
+            "rouge_scores": {
+              "rouge-1": 0.0999999968000001,
+              "rouge-2": 0.028985504566267837,
+              "rouge-l": 0.06666666346666682
+            },
+            "keyword_score": 0.6666666666666666,
+            "total_score": 0.31496402781697846
+          },
+          "generation_time": 23.513781547546387
+        }
+      ]
+    },
+    {
+      "name": "gandhi_personal_life",
+      "description": "Test cases about Gandhi's personal life and habits",
+      "test_cases": [
+        {
+          "prompt": "What was Gandhi's daily routine?",
+          "expected": "Gandhi's daily routine included prayer, spinning on the charkha, walking, and maintaining a simple vegetarian diet.",
+          "actual": "Gandhi had an active and eventful daily routine focused on his public speaking and cultural engagement. He travelled across India frequently, attending meetings and delivering speeches, which suggests a structured schedule involving professional activities each day. While specific details about his sleep or meal times are absent from the provided information, it is clear that Gandhi's days were marked by his commitment to nonviolent struggle and cultural education.",
+          "metrics": {
+            "similarity_score": 0.19863013698630136,
+            "rouge_scores": {
+              "rouge-1": 0.17948717622616703,
+              "rouge-2": 0.02469135500685908,
+              "rouge-l": 0.1538461505851414
+            },
+            "keyword_score": 0.0,
+            "total_score": 0.12560589997006297
+          },
+          "generation_time": 13.665812730789185
+        },
+        {
+          "prompt": "What was Gandhi's diet?",
+          "expected": "Gandhi was a strict vegetarian and often fasted as part of his spiritual practice.",
+          "actual": "Sanjay Gandhi, the elder son of Mahatma Gandhi, played a crucial role in the political landscape of India after his father's assassination in 1947. Here's a structured summary of his career and personal life:\n\n### Professional Career:\n- **Early Years**: Sanjay began his political journey as a member of the Indian National Congress but faced internal strife within the party, leading to his resignation from the 1977 Lok Sabha election.\n- **Return to Power**: After Mahatma Gandhi's assassination in 1947, Sanjay returned to power with the Congress Party, playing a key role in national surveys conducted by the Rashtriya Samaj Party (RSS) post-independence. These surveys were instrumental in shaping India's governance structure, emphasizing multi-party systems and democratic principles.\n- **Leadership**: Sanjay remained Prime Minister of India from 1980 until his death in 1984. He faced significant challenges, including internal party conflicts within Congress during the 1979-1980 period, which led to the dissolution of Parliament and a brief leadership change with Charan Singh.\n\n### Personal Life:\n- **Family Background**: Sanjay's father, Mahatma Gandhi, was a prominent administrator who later become India's Prime Minister. His mother was from the Vaishnava community, influencing his religious upbringing.\n- **Marriage**: He married Maneka Anand in 1967; they had a son, Varun, born before Sanjay's father's death. Their unconventional marriage, with Maneka being younger by over two decades, faced societal scrutiny but was accepted by his family.\n\n### Posthumous Recognition:\n- **Padma Bhushan**: Sanjay received the Padma Bhushan in 1983 posthumously for his contributions to national surveys and governance, recognizing his efforts despite facing significant challenges during his tenure.\n\n### Legacy:\nSanjay Gandhi's life exemplifies resilience and leadership under adversity. His blend of personal duties and public service highlights a grounded perspective informed by his father's legacy, while his unconventional marriage reflects the complexities of family life amidst political turmoil.\n\nIn summary, Sanjay Gandhi was a pivotal leader in post-independence India, navigating challenges to remain committed to Mahatma Gandhi's ideals, despite personal and political struggles.",
+          "metrics": {
+            "similarity_score": 0.02853545950482585,
+            "rouge_scores": {
+              "rouge-1": 0.06422018228431953,
+              "rouge-2": 0.018181817424977074,
+              "rouge-l": 0.06422018228431953
+            },
+            "keyword_score": 0.0,
+            "total_score": 0.030680238487226195
+          },
+          "generation_time": 36.51809024810791
+        },
+        {
+          "prompt": "What was Gandhi's favorite book?",
+          "expected": "Gandhi's favorite book was the Bhagavad Gita, which greatly influenced his philosophy.",
+          "actual": "Gandhi did not select a favorite book; he often relied on reading from primary sources during his travels and speeches.",
+          "metrics": {
+            "similarity_score": 0.4682926829268293,
+            "rouge_scores": {
+              "rouge-1": 0.12499999531250018,
+              "rouge-2": 0.0,
+              "rouge-l": 0.12499999531250018
+            },
+            "keyword_score": 0.3333333333333333,
+            "total_score": 0.32481707176448177
+          },
+          "generation_time": 13.240628719329834
+        }
+      ]
+    },
+    {
+      "name": "gandhi_legacy",
+      "description": "Test cases about Gandhi's impact and legacy",
+      "test_cases": [
+        {
+          "prompt": "Who was influenced by Gandhi's nonviolence?",
+          "expected": "Martin Luther King Jr. was greatly influenced by Gandhi's philosophy of nonviolence.",
+          "actual": "It seems like you have a list of search results related to Sanjay Gandhi, but they are not directly relevant to his life story. However, based on the information provided, here is an overview of Sanjay Gandhi:\n\n### Background:\n- **Name:** Sanjay Gandhi\n- **Father:** Mohan Singh (the younger brother of Indira Gandhi and Prime Minister of India)\n- **Education:** Studied at Oxford University\n\n### Early Life:\n- Born in London, England.\n- Was brought to India by his parents when he was 4 years old.\n\n### Career:\n- Worked as a lawyer before entering politics.\n- Represented the Indian subcontinent in the United Nations from 1967 until his death in 1980.\n\n### Personal Life:\n- Married to Meira Banerjee (known as \"Meera\") who was six years younger than him. They had three sons: Sanjukumar, Arvind, and Manish.\n- Known for his reserved nature and strict private life.\n\n### Legacy:\n- Sanjay Gandhi is remembered for his dedication to his family's religious beliefs and his role in preserving their faith in India.\n- His passing was mourned by many, including his father Mohan Singh (who later became Prime Minister of India) and his siblings.\n\nIf you need more specific information about him or a particular aspect of his life, feel free to ask!",
+          "metrics": {
+            "similarity_score": 0.06179351921627732,
+            "rouge_scores": {
+              "rouge-1": 0.03846153704142017,
+              "rouge-2": 0.0,
+              "rouge-l": 0.03846153704142017
+            },
+            "keyword_score": 0.0,
+            "total_score": 0.03625586879893698
+          },
+          "generation_time": 48.08600831031799
+        },
+        {
+          "prompt": "What is Gandhi's birthday celebrated as?",
+          "expected": "Gandhi's birthday, October 2, is celebrated as the International Day of Non-Violence.",
+          "actual": "Gandhi was born on January 2, 1869. According to the provided results, there is no specific information about how his birthday is celebrated. Therefore, based on the given data, it cannot be determined what Gandhi's birthday is celebrated as.\n\nAnswer: There is no information provided that indicates how Gandhi's birthday is celebrated.",
+          "metrics": {
+            "similarity_score": 0.2660332541567696,
+            "rouge_scores": {
+              "rouge-1": 0.24489795548521454,
+              "rouge-2": 0.07142856827168381,
+              "rouge-l": 0.20408162895460233
+            },
+            "keyword_score": 0.3333333333333333,
+            "total_score": 0.2676377903490885
+          },
+          "generation_time": 11.402104377746582
+        },
+        {
+          "prompt": "What did Gandhi say about change?",
+          "expected": "Gandhi famously said, 'Be the change you wish to see in the world.'",
+          "actual": "The 1980 Indian general elections resulted in a decisive victory for the Indian National Congress Party led by Prime Minister Indira Gandhi, who was supported by her husband, ex-Prime Minister Jawaharlal Nehru, and son Sanjay Gandhi. The elections were held on January 4, 1980, marking the first time in over 25 years that a single party WON the seat of power in India.\n\nThe Congress Party's dominance was achieved through a sweeping victory across all regions, with no candidate from the opposition parties securing more than ten percent of the popular vote. This marked a significant shift in Indian politics following decades of successive Prime Ministers from non-Congress parties since 1947.\n\nUnder Indira Gandhi's leadership, the Congress Party formed governments in various states that were previously ruled by opposition parties such as the Communist Party of India (CPI), National Front, and others. Sanjay Gandhi played a crucial role during this period, leading the Congress Party's ministries and contributing to the nation's development under the \"Make in India\" policy and other reform measures.",
+          "metrics": {
+            "similarity_score": 0.0663265306122449,
+            "rouge_scores": {
+              "rouge-1": 0.06015037417604166,
+              "rouge-2": 0.0,
+              "rouge-l": 0.06015037417604166
+            },
+            "keyword_score": 0.0,
+            "total_score": 0.04457572449771046
+          },
+          "generation_time": 18.056323289871216
+        }
+      ]
+    },
+    {
+      "name": "gandhi_education",
+      "description": "Test cases about Gandhi's views on education",
+      "test_cases": [
+        {
+          "prompt": "What was Gandhi's education system called?",
+          "expected": "Gandhi's education system was called 'Nai Talim' or Basic Education.",
+          "actual": "Gandhi did not have a specific education system named after him. Instead, he propagated his ideas through cultural symbols, ideological campaigns, and public speaking across various regions during his lifetime.\n\nAnswer: There is no specific \"education system\" named after Gandhi mentioned in the provided results. His efforts were focused on propagating his ideas through leadership and public campaigns rather than establishing a formal educational framework.",
+          "metrics": {
+            "similarity_score": 0.18181818181818182,
+            "rouge_scores": {
+              "rouge-1": 0.062499997363281365,
+              "rouge-2": 0.028985504977945987,
+              "rouge-l": 0.062499997363281365
+            },
+            "keyword_score": 0.3333333333333333,
+            "total_score": 0.19147727193625713
+          },
+          "generation_time": 11.997910261154175
+        },
+        {
+          "prompt": "What did Gandhi think about manual work?",
+          "expected": "Gandhi believed that manual work and education should go together.",
+          "actual": "**Answer:**\n\nIn 1980, India experienced a pivotal moment in its political landscape following the 1977 assassination of Indira Gandhi, who had been succeeded by her son, Sanjay Gandhi. The 1980 general elections resulted in a resounding victory for the Congress Party under Sanjay Gandhi's leadership. The Congress Party swept to power with an overwhelming landslide majority, effectively reuniting India under the PM's son.\n\nThis victory marked a significant political shift as Sanjay Gandhi became the Prime Minister again, fulfilling his mother's unspoken wish and continuing the Congress dynasty in Indian politics. However, after Indira Gandhi's assassination in 1980, the Congress Party lost control of their major state, Tamil Nadu, to the opposition alliance led by P. V. Narasimha Rao.\n\nThe 1980 elections not only solidified Sanjay Gandhi's position as PM but also highlighted a broader trend: the return of the Congress Party to power and their subsequent influence in other regions of India, despite losing control at the national level. This event underscored the complex dynamics of Indian politics during this period, where regional politics often dictated the national government structure.\n\nSanjya Gandhi's personal life, including his marriage to Maneka Anand and the birth of their son Varun, adds a human element to the political narrative but is not directly pivotal to the change in power. The focus remains on the shift from Indira Gandhi's leadership to Sanjay Gandhi's reemergence as the dominant political force in India after her assassination.",
+          "metrics": {
+            "similarity_score": 0.05253512522907758,
+            "rouge_scores": {
+              "rouge-1": 0.02580645040582732,
+              "rouge-2": 0.0,
+              "rouge-l": 0.02580645040582732
+            },
+            "keyword_score": 0.0,
+            "total_score": 0.02875598521337923
+          },
+          "generation_time": 31.822992086410522
+        }
+      ]
+    },
+    {
+      "name": "gandhi_environment",
+      "description": "Test cases about Gandhi's environmental views",
+      "test_cases": [
+        {
+          "prompt": "What was Gandhi's famous quote about needs and greed?",
+          "expected": "Gandhi said, 'The world has enough for everyone's need, but not enough for everyone's greed.'",
+          "actual": "Sanjay Gandhi is a prominent Indian politician whose background and career are as follows:\n\n**Biography:**\n\n- **Name:** Sanjay Gandhi\n- **Birth Date:** November 7, 1958\n- **Birth Place:** Mumbai, Maharashtra, India\n- **Parents:** \n  - Indira Gandhi (First Wife/First Prime Minister of India)\n  - Kamla Ambedkar (Mother; Congress President and Founding Member of Justice Now)\n- **Education:** Law Degree from the University of Mumbai\n- **Political Affiliation:** Congress Party\n\n**Career:**\n- **Family Legacy in Politics:** Son of Indira Gandhi, he inherited political prominence but chose not to follow her into public office. He became active politically later in life.\n- **Personal Life:**\n  - Married Maneka Anand (1974), who is 10 years younger.\n  - Has a younger sister, Malala Gandhi, known for her work with Justice Now.\n  - They have children, including Varun Gandhi.\n\n**Political Career:**\n- **Early Years:** Showed interest in politics from a young age but did not pursue it professionally until later.\n- **Maratha Dal MP:** Represented Maharashtra's Maratha Dal political group in the Indian Parliament (Rajya Sabha) from 1983 to 2014, making him one of the longest-serving members from Maharashtra.\n\n**Post-Political Life:**\n- After his political career, he became an MP representing Maharashtra's Maratha Dal in the Lok Sabha (Parliament) starting from 2014 until his death on June 23, 1980. However, this seems contradictory as he died in 1980 before being elected.\n\n**Death:**\n- Predeceased his wife and children.\n- Passed away due to injuries sustained in a road accident on June 23, 1980, at the age of 21.\n\n**Legacy:**\n- Though he was not directly connected to the Gandhi family's political line after his mother's passing, he is recognized for his role in extending the Maratha Dal's influence in Maharashtra.\n- His death marked a significant loss for Maharashtra and Indian politics.",
+          "metrics": {
+            "similarity_score": 0.06212424849699399,
+            "rouge_scores": {
+              "rouge-1": 0.0392156850812188,
+              "rouge-2": 0.0,
+              "rouge-l": 0.0392156850812188
+            },
+            "keyword_score": 0.0,
+            "total_score": 0.036614404923163237
+          },
+          "generation_time": 34.07262873649597
+        },
+        {
+          "prompt": "What did Gandhi promote for sustainable living?",
+          "expected": "Gandhi promoted simple living, minimal consumption, and self-sufficiency.",
+          "actual": "Gandhi promoted sustainable living through the \"Gandhi Diet,\" an early 20th-century initiative aimed at reducing food waste by encouraging home cooking and buying less for a family to foster self-sufficiency and resource conservation.",
+          "metrics": {
+            "similarity_score": 0.38436482084690554,
+            "rouge_scores": {
+              "rouge-1": 0.19999999680000002,
+              "rouge-2": 0.05128204833662081,
+              "rouge-l": 0.19999999680000002
+            },
+            "keyword_score": 0.3333333333333333,
+            "total_score": 0.3137459273787622
+          },
+          "generation_time": 9.128346681594849
+        }
+      ]
+    }
+  ],
+  "overall_metrics": {
+    "total_cases": 19,
+    "average_scores": {
+      "similarity": 0.17817301214718184,
+      "rouge_l": 0.11641764210803147,
+      "keyword": 0.2236842105263158,
+      "total": 0.17329976064917688
+    }
+  }
+}
